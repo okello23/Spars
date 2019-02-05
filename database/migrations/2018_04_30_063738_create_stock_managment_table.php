@@ -1,0 +1,297 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateStockManagmentTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        //
+       Schema::create('stock_management', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('health_facility_id')->unsigned();
+            $table->integer('survey_summary_id')->unsigned();
+            $table->string('form_id');
+
+            $table->integer('r1c1')->nullable();
+            $table->integer('r1c2')->nullable();
+            $table->integer('r1c3')->nullable();
+            $table->integer('r1c4')->nullable();            
+            $table->integer('r1c5')->nullable();
+            $table->integer('r1c6')->nullable();
+            $table->integer('r1c7')->nullable();
+            $table->integer('r1c8')->nullable();            
+            $table->integer('r1c9')->nullable();
+            $table->integer('r1c10')->nullable();
+            $table->integer('r1c11')->nullable();
+            $table->integer('r1c12')->nullable();
+            $table->integer('r1c13')->nullable();            
+            $table->integer('r1c14')->nullable();
+            $table->integer('r1c15')->nullable();
+            $table->integer('r1c16')->nullable();
+            $table->integer('r1c17')->nullable();            
+            $table->integer('r1c18')->nullable();
+            $table->integer('r1c19')->nullable();
+            $table->integer('r1c20')->nullable();
+            $table->integer('r1c21')->nullable();
+            $table->integer('r1c22')->nullable();
+
+            $table->integer('r2c1')->nullable();
+            $table->string('r2c2_cd4item')->nullable();
+            $table->integer('r2c2')->nullable();
+            $table->integer('r2c3')->nullable();
+            $table->integer('r2c4')->nullable();            
+            $table->integer('r2c5')->nullable();
+            $table->integer('r2c6')->nullable();
+            $table->integer('r2c7')->nullable();
+            $table->integer('r2c8')->nullable();            
+            $table->integer('r2c9')->nullable();
+            $table->integer('r2c10')->nullable();
+            $table->integer('r2c11')->nullable();
+            $table->integer('r2c12')->nullable();
+            $table->integer('r2c13')->nullable();            
+            $table->integer('r2c14')->nullable();
+            $table->integer('r2c15')->nullable();
+            $table->integer('r2c16')->nullable();
+            $table->integer('r2c17')->nullable();            
+            $table->integer('r2c18')->nullable();
+            $table->integer('r2c19')->nullable();
+            $table->integer('r2c20')->nullable();
+            $table->integer('r2c21')->nullable();
+            $table->integer('r2c22')->nullable();
+
+            $table->integer('r3c1')->nullable();
+            $table->integer('r3c2')->nullable();
+            $table->integer('r3c3')->nullable();
+            $table->integer('r3c4')->nullable();            
+            $table->integer('r3c5')->nullable();
+            $table->integer('r3c6')->nullable();
+            $table->integer('r3c7')->nullable();
+            $table->integer('r3c8')->nullable();            
+            $table->integer('r3c9')->nullable();
+            $table->integer('r3c10')->nullable();
+            $table->integer('r3c11')->nullable();
+            $table->integer('r3c12')->nullable();
+            $table->integer('r3c13')->nullable();            
+            $table->integer('r3c14')->nullable();
+            $table->integer('r3c15')->nullable();
+            $table->integer('r3c16')->nullable();
+            $table->integer('r3c17')->nullable();            
+            $table->integer('r3c18')->nullable();
+            $table->integer('r3c19')->nullable();
+            $table->integer('r3c20')->nullable();
+            $table->integer('r3c21')->nullable();
+            $table->integer('r3c22')->nullable();
+
+            $table->integer('r4c1')->nullable();
+            $table->integer('r4c2')->nullable();
+            $table->integer('r4c3')->nullable();
+            $table->integer('r4c4')->nullable();            
+            $table->integer('r4c5')->nullable();
+            $table->integer('r4c6')->nullable();
+            $table->integer('r4c7')->nullable();
+            $table->integer('r4c8')->nullable();            
+            $table->integer('r4c9')->nullable();
+            $table->integer('r4c10')->nullable();
+            $table->integer('r4c11')->nullable();
+            $table->integer('r4c12')->nullable();
+            $table->integer('r4c13')->nullable();            
+            $table->integer('r4c14')->nullable();
+            $table->integer('r4c15')->nullable();
+            $table->integer('r4c16')->nullable();
+            $table->integer('r4c17')->nullable();            
+            $table->integer('r4c18')->nullable();
+            $table->integer('r4c19')->nullable();
+            $table->integer('r4c20')->nullable();
+            $table->integer('r4c21')->nullable();
+            $table->integer('r4c22')->nullable();            
+
+            $table->integer('r5c1')->nullable();
+            $table->integer('r5c2')->nullable();
+            $table->integer('r5c3')->nullable();
+            $table->integer('r5c4')->nullable();            
+            $table->integer('r5c5')->nullable();
+            $table->integer('r5c6')->nullable();
+            $table->integer('r5c7')->nullable();
+            $table->integer('r5c8')->nullable();            
+            $table->integer('r5c9')->nullable();
+            $table->integer('r5c10')->nullable();
+            $table->integer('r5c11')->nullable();
+            $table->integer('r5c12')->nullable();
+            $table->integer('r5c13')->nullable();            
+            $table->integer('r5c14')->nullable();
+            $table->integer('r5c15')->nullable();
+            $table->integer('r5c16')->nullable();
+            $table->integer('r5c17')->nullable();            
+            $table->integer('r5c18')->nullable();
+            $table->integer('r5c19')->nullable();
+            $table->integer('r5c20')->nullable();
+            $table->integer('r5c21')->nullable();
+            $table->integer('r5c22')->nullable();
+
+
+            $table->integer('r6c1')->nullable();
+            $table->integer('r6c2')->nullable();
+            $table->integer('r6c3')->nullable();
+            $table->integer('r6c4')->nullable();            
+            $table->integer('r6c5')->nullable();
+            $table->integer('r6c6')->nullable();
+            $table->integer('r6c7')->nullable();
+            $table->integer('r6c8')->nullable();            
+            $table->integer('r6c9')->nullable();
+            $table->integer('r6c10')->nullable();
+            $table->integer('r6c11')->nullable();
+            $table->integer('r6c12')->nullable();
+            $table->integer('r6c13')->nullable();            
+            $table->integer('r6c14')->nullable();
+            $table->integer('r6c15')->nullable();
+            $table->integer('r6c16')->nullable();
+            $table->integer('r6c17')->nullable();            
+            $table->integer('r6c18')->nullable();
+            $table->integer('r6c19')->nullable();
+            $table->integer('r6c20')->nullable();
+            $table->integer('r6c21')->nullable();
+            $table->integer('r6c22')->nullable();
+
+            $table->integer('r7c1')->nullable();
+            $table->integer('r7c2')->nullable();
+            $table->integer('r7c3')->nullable();
+            $table->integer('r7c4')->nullable();            
+            $table->integer('r7c5')->nullable();
+            $table->integer('r7c6')->nullable();
+            $table->integer('r7c7')->nullable();
+            $table->integer('r7c8')->nullable();            
+            $table->integer('r7c9')->nullable();
+            $table->integer('r7c10')->nullable();
+            $table->integer('r7c11')->nullable();
+            $table->integer('r7c12')->nullable();
+            $table->integer('r7c13')->nullable();            
+            $table->integer('r7c14')->nullable();
+            $table->integer('r7c15')->nullable();
+            $table->integer('r7c16')->nullable();
+            $table->integer('r7c17')->nullable();            
+            $table->integer('r7c18')->nullable();
+            $table->integer('r7c19')->nullable();
+            $table->integer('r7c20')->nullable();
+            $table->integer('r7c21')->nullable();
+            $table->integer('r7c22')->nullable();
+
+            $table->integer('r8c1')->nullable();
+            $table->integer('r8c2')->nullable();
+            $table->integer('r8c3')->nullable();
+            $table->integer('r8c4')->nullable();            
+            $table->integer('r8c5')->nullable();
+            $table->integer('r8c6')->nullable();
+            $table->integer('r8c7')->nullable();
+            $table->integer('r8c8')->nullable();            
+            $table->integer('r8c9')->nullable();
+            $table->integer('r8c10')->nullable();
+            $table->integer('r8c11')->nullable();
+            $table->integer('r8c12')->nullable();
+            $table->integer('r8c13')->nullable();            
+            $table->integer('r8c14')->nullable();
+            $table->integer('r8c15')->nullable();
+            $table->integer('r8c16')->nullable();
+            $table->integer('r8c17')->nullable();            
+            $table->integer('r8c18')->nullable();
+            $table->integer('r8c19')->nullable();
+            $table->integer('r8c20')->nullable();
+            $table->integer('r8c21')->nullable();
+            $table->integer('r8c22')->nullable();
+
+            $table->integer('r9c1')->nullable();
+            $table->integer('r9c2')->nullable();
+            $table->integer('r9c3')->nullable();
+            $table->integer('r9c4')->nullable();            
+            $table->integer('r9c5')->nullable();
+            $table->integer('r9c6')->nullable();
+            $table->integer('r9c7')->nullable();
+            $table->integer('r9c8')->nullable();            
+            $table->integer('r9c9')->nullable();
+            $table->integer('r9c10')->nullable();
+            $table->integer('r9c11')->nullable();
+            $table->integer('r9c12')->nullable();
+            $table->integer('r9c13')->nullable();            
+            $table->integer('r9c14')->nullable();
+            $table->integer('r9c15')->nullable();
+            $table->integer('r9c16')->nullable();
+            $table->integer('r9c17')->nullable();            
+            $table->integer('r9c18')->nullable();
+            $table->integer('r9c19')->nullable();
+            $table->integer('r9c20')->nullable();
+            $table->integer('r9c21')->nullable();
+            $table->integer('r9c22')->nullable();            
+
+            $table->integer('r10c1')->nullable();
+            $table->integer('r10c2')->nullable();
+            $table->integer('r10c3')->nullable();
+            $table->integer('r10c4')->nullable();            
+            $table->integer('r10c5')->nullable();
+            $table->integer('r10c6')->nullable();
+            $table->integer('r10c7')->nullable();
+            $table->integer('r10c8')->nullable();            
+            $table->integer('r10c9')->nullable();
+            $table->integer('r10c10')->nullable();
+            $table->integer('r10c11')->nullable();
+            $table->integer('r10c12')->nullable();
+            $table->integer('r10c13')->nullable();            
+            $table->integer('r10c14')->nullable();
+            $table->integer('r10c15')->nullable();
+            $table->integer('r10c16')->nullable();
+            $table->integer('r10c17')->nullable();            
+            $table->integer('r10c18')->nullable();
+            $table->integer('r10c19')->nullable();
+            $table->integer('r10c20')->nullable();
+            $table->integer('r10c21')->nullable();
+            $table->integer('r10c22')->nullable();
+
+            $table->integer('r11c1')->nullable();
+            $table->integer('r11c2')->nullable();
+            $table->integer('r11c3')->nullable();
+            $table->integer('r11c4')->nullable();            
+            $table->integer('r11c5')->nullable();
+            $table->integer('r11c6')->nullable();
+            $table->integer('r11c7')->nullable();
+            $table->integer('r11c8')->nullable();            
+            $table->integer('r11c9')->nullable();
+            $table->integer('r11c10')->nullable();
+            $table->integer('r11c11')->nullable();
+            $table->integer('r11c12')->nullable();
+            $table->integer('r11c13')->nullable();            
+            $table->integer('r11c14')->nullable();
+            $table->integer('r11c15')->nullable();
+            $table->integer('r11c16')->nullable();
+            $table->integer('r11c17')->nullable();            
+            $table->integer('r11c18')->nullable();
+            $table->integer('r11c19')->nullable();
+            $table->integer('r11c20')->nullable();
+            $table->integer('r11c21')->nullable();
+            $table->integer('r11c22')->nullable();
+
+            $table->text('stock_management_comments')->nullable();
+            $table->double('score', 3, 2);
+            $table->date('visit_date');
+            $table->string('created_by');
+            $table->string('updated_by')->nullable();
+            $table->foreign('health_facility_id')->references('id')->on('health_facilities');
+            $table->foreign('survey_summary_id')->references('id')->on('survey_summary');
+            $table->timestamps();
+        });        
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('stock_management');
+    }
+}

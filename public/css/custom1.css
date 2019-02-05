@@ -1,0 +1,105 @@
+@font-face {
+        font-family: "Lato";
+        src: url('../fonts/Lato-Regular.eot');
+        src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Regular.svg#Lato Black') format('svg'),
+        url('../fonts/Lato-Regular.woff') format('woff'),
+        url('../fonts/Lato-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+}
+body{
+    font-family: "Lato";
+    direction: ltr;
+}
+.navbar-header h4 {
+    color: #FFF
+}
+form.form-delete {
+   margin-bottom: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+select[readonly].select2 + .select2-container {
+  pointer-events: none;
+  touch-action: none;
+
+  .select2-selection {
+    background: #eee;
+    box-shadow: none;
+  }
+
+  .select2-selection__arrow,
+  .select2-selection__clear {
+    display: none;
+  }
+}
+
+.clickable .glyphicon
+{
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px
+}
+
+.panel-heading span
+{
+    margin-top: -23px;
+    font-size: 15px;
+    margin-right: -9px;
+}
+a.clickable { color: inherit; }
+a.clickable:hover { text-decoration:none; }
+
+.panel.survey-panel {
+  padding: 0px;
+  }
+
+th.survey { 
+    height: 200px;
+    max-width: 10px; 
+    position: relative;
+    /* min-width is large enough to stop the longest header text you will have from overlapping when the table is the smallest it will be */
+}
+
+th.survey div {
+    height: 200px;    
+
+    /*max-width contains the span and must match the height of the th minus any padding you want */
+
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 200px;
+    margin: 0 -5px;
+
+    /*max-width contains the span and must match the height of the th minus any padding you want */
+}
+
+.table-condensed{
+    font-size: 13px;
+}
+
+.custom-data-table>tbody>tr>td
+{
+ vertical-align: middle;
+}

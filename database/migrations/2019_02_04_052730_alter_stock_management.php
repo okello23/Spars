@@ -1,0 +1,284 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AlterStockManagement extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+    Schema::table('stock_management', function($table)
+    {
+
+            $table->integer('r1c1')->default(-9)->change();
+            $table->integer('r1c2')->default(-9)->change();
+            $table->integer('r1c3')->default(-9)->change();
+            $table->integer('r1c4')->default(-9)->change();
+            $table->integer('r1c5')->default(-9)->change();
+            $table->integer('r1c6')->default(-9)->change();
+            $table->integer('r1c7')->default(-9)->change();
+            $table->integer('r1c8')->default(-9)->change();
+            $table->integer('r1c9')->default(-9)->change();
+            $table->integer('r1c10')->default(-9)->change();
+            $table->integer('r1c11')->default(-9)->change();
+            $table->integer('r1c12')->default(-9)->change();
+            $table->integer('r1c13')->default(-9)->change();
+            $table->integer('r1c14')->default(-9)->change();
+            $table->integer('r1c15')->default(-9)->change();
+            $table->integer('r1c16')->default(-9)->change();
+            $table->integer('r1c17')->default(-9)->change();
+            $table->integer('r1c18')->default(-9)->change();
+            $table->integer('r1c19')->default(-9)->change();
+            $table->integer('r1c20')->default(-9)->change();
+            $table->integer('r1c21')->default(-9)->change();
+            $table->integer('r1c22')->default(-9)->change();
+
+            $table->integer('r2c1')->default(-9)->change();
+            $table->integer('r2c2')->default(-9)->change();
+            $table->integer('r2c3')->default(-9)->change();
+            $table->integer('r2c4')->default(-9)->change();
+            $table->integer('r2c5')->default(-9)->change();
+            $table->integer('r2c6')->default(-9)->change();
+            $table->integer('r2c7')->default(-9)->change();
+            $table->integer('r2c8')->default(-9)->change();
+            $table->integer('r2c9')->default(-9)->change();
+            $table->integer('r2c10')->default(-9)->change();
+            $table->integer('r2c11')->default(-9)->change();
+            $table->integer('r2c12')->default(-9)->change();
+            $table->integer('r2c13')->default(-9)->change();
+            $table->integer('r2c14')->default(-9)->change();
+            $table->integer('r2c15')->default(-9)->change();
+            $table->integer('r2c16')->default(-9)->change();
+            $table->integer('r2c17')->default(-9)->change();
+            $table->integer('r2c18')->default(-9)->change();
+            $table->integer('r2c19')->default(-9)->change();
+            $table->integer('r2c20')->default(-9)->change();
+            $table->integer('r2c21')->default(-9)->change();
+            $table->integer('r2c22')->default(-9)->change();
+
+            $table->integer('r3c1')->default(-9)->change();
+            $table->integer('r3c2')->default(-9)->change();
+            $table->integer('r3c3')->default(-9)->change();
+            $table->integer('r3c4')->default(-9)->change();
+            $table->integer('r3c5')->default(-9)->change();
+            $table->integer('r3c6')->default(-9)->change();
+            $table->integer('r3c7')->default(-9)->change();
+            $table->integer('r3c8')->default(-9)->change();
+            $table->integer('r3c9')->default(-9)->change();
+            $table->integer('r3c10')->default(-9)->change();
+            $table->integer('r3c11')->default(-9)->change();
+            $table->integer('r3c12')->default(-9)->change();
+            $table->integer('r3c13')->default(-9)->change();
+            $table->integer('r3c14')->default(-9)->change();
+            $table->integer('r3c15')->default(-9)->change();
+            $table->integer('r3c16')->default(-9)->change();
+            $table->integer('r3c17')->default(-9)->change();
+            $table->integer('r3c18')->default(-9)->change();
+            $table->integer('r3c19')->default(-9)->change();
+            $table->integer('r3c20')->default(-9)->change();
+            $table->integer('r3c21')->default(-9)->change();
+            $table->integer('r3c22')->default(-9)->change();
+
+            $table->integer('r4c1')->default(-9)->change();
+            $table->integer('r4c2')->default(-9)->change();
+            $table->integer('r4c3')->default(-9)->change();
+            $table->integer('r4c4')->default(-9)->change();
+            $table->integer('r4c5')->default(-9)->change();
+            $table->integer('r4c6')->default(-9)->change();
+            $table->integer('r4c7')->default(-9)->change();
+            $table->integer('r4c8')->default(-9)->change();
+            $table->integer('r4c9')->default(-9)->change();
+            $table->integer('r4c10')->default(-9)->change();
+            $table->integer('r4c11')->default(-9)->change();
+            $table->integer('r4c12')->default(-9)->change();
+            $table->integer('r4c13')->default(-9)->change();
+            $table->integer('r4c14')->default(-9)->change();
+            $table->integer('r4c15')->default(-9)->change();
+            $table->integer('r4c16')->default(-9)->change();
+            $table->integer('r4c17')->default(-9)->change();
+            $table->integer('r4c18')->default(-9)->change();
+            $table->integer('r4c19')->default(-9)->change();
+            $table->integer('r4c20')->default(-9)->change();
+            $table->integer('r4c21')->default(-9)->change();
+            $table->integer('r4c22')->default(-9)->change();
+
+            $table->integer('r5c1')->default(-9)->change();
+            $table->integer('r5c2')->default(-9)->change();
+            $table->integer('r5c3')->default(-9)->change();
+            $table->integer('r5c4')->default(-9)->change();
+            $table->integer('r5c5')->default(-9)->change();
+            $table->integer('r5c6')->default(-9)->change();
+            $table->integer('r5c7')->default(-9)->change();
+            $table->integer('r5c8')->default(-9)->change();
+            $table->integer('r5c9')->default(-9)->change();
+            $table->integer('r5c10')->default(-9)->change();
+            $table->integer('r5c11')->default(-9)->change();
+            $table->integer('r5c12')->default(-9)->change();
+            $table->integer('r5c13')->default(-9)->change();
+            $table->integer('r5c14')->default(-9)->change();
+            $table->integer('r5c15')->default(-9)->change();
+            $table->integer('r5c16')->default(-9)->change();
+            $table->integer('r5c17')->default(-9)->change();
+            $table->integer('r5c18')->default(-9)->change();
+            $table->integer('r5c19')->default(-9)->change();
+            $table->integer('r5c20')->default(-9)->change();
+            $table->integer('r5c21')->default(-9)->change();
+            $table->integer('r5c22')->default(-9)->change();
+
+            $table->integer('r6c1')->default(-9)->change();
+            $table->integer('r6c2')->default(-9)->change();
+            $table->integer('r6c3')->default(-9)->change();
+            $table->integer('r6c4')->default(-9)->change();
+            $table->integer('r6c5')->default(-9)->change();
+            $table->integer('r6c6')->default(-9)->change();
+            $table->integer('r6c7')->default(-9)->change();
+            $table->integer('r6c8')->default(-9)->change();
+            $table->integer('r6c9')->default(-9)->change();
+            $table->integer('r6c10')->default(-9)->change();
+            $table->integer('r6c11')->default(-9)->change();
+            $table->integer('r6c12')->default(-9)->change();
+            $table->integer('r6c13')->default(-9)->change();
+            $table->integer('r6c14')->default(-9)->change();
+            $table->integer('r6c15')->default(-9)->change();
+            $table->integer('r6c16')->default(-9)->change();
+            $table->integer('r6c17')->default(-9)->change();
+            $table->integer('r6c18')->default(-9)->change();
+            $table->integer('r6c19')->default(-9)->change();
+            $table->integer('r6c20')->default(-9)->change();
+            $table->integer('r6c21')->default(-9)->change();
+            $table->integer('r6c22')->default(-9)->change();
+
+            $table->integer('r7c1')->default(-9)->change();
+            $table->integer('r7c2')->default(-9)->change();
+            $table->integer('r7c3')->default(-9)->change();
+            $table->integer('r7c4')->default(-9)->change();
+            $table->integer('r7c5')->default(-9)->change();
+            $table->integer('r7c6')->default(-9)->change();
+            $table->integer('r7c7')->default(-9)->change();
+            $table->integer('r7c8')->default(-9)->change();
+            $table->integer('r7c9')->default(-9)->change();
+            $table->integer('r7c10')->default(-9)->change();
+            $table->integer('r7c11')->default(-9)->change();
+            $table->integer('r7c12')->default(-9)->change();
+            $table->integer('r7c13')->default(-9)->change();
+            $table->integer('r7c14')->default(-9)->change();
+            $table->integer('r7c15')->default(-9)->change();
+            $table->integer('r7c16')->default(-9)->change();
+            $table->integer('r7c17')->default(-9)->change();
+            $table->integer('r7c18')->default(-9)->change();
+            $table->integer('r7c19')->default(-9)->change();
+            $table->integer('r7c20')->default(-9)->change();
+            $table->integer('r7c21')->default(-9)->change();
+            $table->integer('r7c22')->default(-9)->change();
+
+            $table->integer('r8c1')->default(-9)->change();
+            $table->integer('r8c2')->default(-9)->change();
+            $table->integer('r8c3')->default(-9)->change();
+            $table->integer('r8c4')->default(-9)->change();
+            $table->integer('r8c5')->default(-9)->change();
+            $table->integer('r8c6')->default(-9)->change();
+            $table->integer('r8c7')->default(-9)->change();
+            $table->integer('r8c8')->default(-9)->change();
+            $table->integer('r8c9')->default(-9)->change();
+            $table->integer('r8c10')->default(-9)->change();
+            $table->integer('r8c11')->default(-9)->change();
+            $table->integer('r8c12')->default(-9)->change();
+            $table->integer('r8c13')->default(-9)->change();
+            $table->integer('r8c14')->default(-9)->change();
+            $table->integer('r8c15')->default(-9)->change();
+            $table->integer('r8c16')->default(-9)->change();
+            $table->integer('r8c17')->default(-9)->change();
+            $table->integer('r8c18')->default(-9)->change();
+            $table->integer('r8c19')->default(-9)->change();
+            $table->integer('r8c20')->default(-9)->change();
+            $table->integer('r8c21')->default(-9)->change();
+            $table->integer('r8c22')->default(-9)->change();
+
+            $table->integer('r9c1')->default(-9)->change();
+            $table->integer('r9c2')->default(-9)->change();
+            $table->integer('r9c3')->default(-9)->change();
+            $table->integer('r9c4')->default(-9)->change();
+            $table->integer('r9c5')->default(-9)->change();
+            $table->integer('r9c6')->default(-9)->change();
+            $table->integer('r9c7')->default(-9)->change();
+            $table->integer('r9c8')->default(-9)->change();
+            $table->integer('r9c9')->default(-9)->change();
+            $table->integer('r9c10')->default(-9)->change();
+            $table->integer('r9c11')->default(-9)->change();
+            $table->integer('r9c12')->default(-9)->change();
+            $table->integer('r9c13')->default(-9)->change();
+            $table->integer('r9c14')->default(-9)->change();
+            $table->integer('r9c15')->default(-9)->change();
+            $table->integer('r9c16')->default(-9)->change();
+            $table->integer('r9c17')->default(-9)->change();
+            $table->integer('r9c18')->default(-9)->change();
+            $table->integer('r9c19')->default(-9)->change();
+            $table->integer('r9c20')->default(-9)->change();
+            $table->integer('r9c21')->default(-9)->change();
+            $table->integer('r9c22')->default(-9)->change();
+
+            $table->integer('r10c1')->default(-9)->change();
+            $table->integer('r10c2')->default(-9)->change();
+            $table->integer('r10c3')->default(-9)->change();
+            $table->integer('r10c4')->default(-9)->change();
+            $table->integer('r10c5')->default(-9)->change();
+            $table->integer('r10c6')->default(-9)->change();
+            $table->integer('r10c7')->default(-9)->change();
+            $table->integer('r10c8')->default(-9)->change();
+            $table->integer('r10c9')->default(-9)->change();
+            $table->integer('r10c10')->default(-9)->change();
+            $table->integer('r10c11')->default(-9)->change();
+            $table->integer('r10c12')->default(-9)->change();
+            $table->integer('r10c13')->default(-9)->change();
+            $table->integer('r10c14')->default(-9)->change();
+            $table->integer('r10c15')->default(-9)->change();
+            $table->integer('r10c16')->default(-9)->change();
+            $table->integer('r10c17')->default(-9)->change();
+            $table->integer('r10c18')->default(-9)->change();
+            $table->integer('r10c19')->default(-9)->change();
+            $table->integer('r10c20')->default(-9)->change();
+            $table->integer('r10c21')->default(-9)->change();
+            $table->integer('r10c22')->default(-9)->change();
+
+            $table->integer('r11c1')->default(-9)->change();
+            $table->integer('r11c2')->default(-9)->change();
+            $table->integer('r11c3')->default(-9)->change();
+            $table->integer('r11c4')->default(-9)->change();
+            $table->integer('r11c5')->default(-9)->change();
+            $table->integer('r11c6')->default(-9)->change();
+            $table->integer('r11c7')->default(-9)->change();
+            $table->integer('r11c8')->default(-9)->change();
+            $table->integer('r11c9')->default(-9)->change();
+            $table->integer('r11c10')->default(-9)->change();
+            $table->integer('r11c11')->default(-9)->change();
+            $table->integer('r11c12')->default(-9)->change();
+            $table->integer('r11c13')->default(-9)->change();
+            $table->integer('r11c14')->default(-9)->change();
+            $table->integer('r11c15')->default(-9)->change();
+            $table->integer('r11c16')->default(-9)->change();
+            $table->integer('r11c17')->default(-9)->change();
+            $table->integer('r11c18')->default(-9)->change();
+            $table->integer('r11c19')->default(-9)->change();
+            $table->integer('r11c20')->default(-9)->change();
+            $table->integer('r11c21')->default(-9)->change();
+            $table->integer('r11c22')->default(-9)->change();
+
+
+        });        
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        
+    }
+}
