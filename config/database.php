@@ -66,6 +66,20 @@ return [
             'engine' => null,
         ],
 
+        'mysql_remote' => [
+            'driver' => 'mysql',
+            'host' => '172.104.150.133',
+            'port' =>  '3306',
+            'database' =>  'sparstest',
+            'username' => 'remote',
+            'password' => '68965',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),

@@ -169,3 +169,8 @@ Route::get('/survey/transfer/{id?}', [
 Route::post('/saveTransfer', [
     'as' => 'survey.saveTransfer', 'uses' => 'SurveyController@saveTransfer'
 ]);
+
+Route::get('/remoteupload', [
+  'uses'=>'ApiController@remoteUpload',
+  'as'=>'remoteupload'
+]);

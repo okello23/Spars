@@ -1,13 +1,13 @@
-@extends('layouts.dashboard')
+<!-- @extends('layouts.dashboard')
 
 @section('content')
 <div class="page_content">
                 <div class="container-fluid">
 
-                   
+
                    <div class="row">
                     <div class="col-lg-12">
-                      <h3 class="pull-left">SPIDER GRAPH</h3>                         
+                      <h3 class="pull-left">SPIDER GRAPH</h3>
                       </div>
                    </div>
 
@@ -70,7 +70,15 @@ var myChart = new Chart(ctx, {
     }
 });
 
-</script>
-@stop
+</script> -->
+
+<!-- @stop -->
+
+<?php
+$servername = "10.200.254.66";
+$username = "root";
+$password = "68965";
+$conn = new mysqli($servername, $username, $password);
 
 
+?>

@@ -12,16 +12,16 @@ class CreateFacilitiesTable extends Migration
      */
     public function up()
     {
-        
-        Schema::create('facilities', function (Blueprint $table) {
+
+        Schema::create('health_facilities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
             $table->string('name');
             $table->integer('level_id')->unsigned();
             $table->foreign('level_id')->references('id')->on('levels');
 
-            $table->integer('ownership_id')->unsigned();            
-            $table->foreign('ownership_id')->references('id')->on('ownership');     
+            $table->integer('ownership_id')->unsigned();
+            $table->foreign('ownership_id')->references('id')->on('ownership');
 
             $table->integer('district_id')->unsigned();
             $table->foreign('district_id')->references('id')->on('districts');
@@ -30,13 +30,13 @@ class CreateFacilitiesTable extends Migration
             $table->foreign('subdistrict_id')->references('id')->on('subdistricts');
 
             $table->integer('responsible_lss_id')->unsigned();
-            $table->foreign('responsible_lss_id')->references('id')->on('persons'); 
+            $table->foreign('responsible_lss_id')->references('id')->on('persons');
 
             $table->integer('in_charge_id')->unsigned();
-            $table->foreign('in_charge_id')->references('id')->on('persons');        
-                            
+            $table->foreign('in_charge_id')->references('id')->on('persons');
+
             $table->timestamps();
-        });               
+        });
     }
 
     /**
