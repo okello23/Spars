@@ -59,13 +59,16 @@
                           </th>
                           @if($item[0]['step']==6 && $item[0]['upload_status'] =="")
                           <th>
-                            <span class='badge badge-success'>Complete </span>
-                            <br>
-                            <span class='badge badge-danger'>Already in Central Lab Spars</span>
+                            <!-- <span class='badge badge-success'>Complete </span> -->
+
+                            <span class='badge badge-danger'>Exists in Central Lab Spars</span>
                           </th>
 
                             @elseif($item[0]['step']==6  && $item[0]['upload_status']==0 && $item[0]['upload_status']!="")
-                          <th>  <a type="button" href="{{ url('remoteupload') }}" class="btn btn-sm btn-primary"><span>Upload</span></a>
+
+                          <th>
+                              <span class='badge badge-success'>Complete </span>
+                             <a type="button" href="{{ url('remoteupload') }}" class="btn btn-sm btn-primary"><span>Upload</span></a>
                           </th>
 
                           @elseif($item[0]['upload_status']==1)
