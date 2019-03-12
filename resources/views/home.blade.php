@@ -30,9 +30,6 @@
                 </div>
 </div>
 
-
-	<a type="button" href="{{ url('remoteupload') }}" class="btn btn-sm btn-primary pull-right"><span class="ion-plus">Remote Upload</span></a>
-
 @endsection
 
 
