@@ -359,7 +359,7 @@ class ApiController extends Controller
       $summary->visit_number = $request->visit_number;
       $summary->form_version = 2;
       $summary->step = 0;
-      $summary->upload_status = 0;
+      $summary->upload_status = 1;
       $summary->created_by = Auth::user()->id;
 
       $summary_response = $summary->save();
@@ -397,7 +397,7 @@ class ApiController extends Controller
         $supervisor->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
         $supervisor->form_id = $form_id;
         $supervisor->created_by = Auth::user()->id;
-        $supervisor->upload_status = 0;
+        $supervisor->upload_status = 1;
 
         $supervisor->save();
 
@@ -409,7 +409,7 @@ class ApiController extends Controller
       $facility->in_charge_fname = $request->in_charge_name;
       $facility->in_charge_contact = $request->in_charge_telephone;
       $facility->lss_fname = $request->responsible_lss;
-      $facility->upload_status = 0;
+      $facility->upload_status = 1;
       $facility->timestamps = false;
 
       $facility_response = $facility->save();
@@ -430,7 +430,7 @@ class ApiController extends Controller
       $general->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $general->form_id = $form_id;
       $general->created_by = Auth::user()->id;
-      $general->upload_status = 0;
+      $general->upload_status = 1;
 
       $general_response = $general->save();
 
@@ -985,7 +985,7 @@ class ApiController extends Controller
       $stock_management->form_id = $request->form_id;
       $stock_management->created_by = Auth::user()->id;
       $stock_management->updated_by = Auth::user()->id;
-      $stock_management->upload_status = 0;
+      $stock_management->upload_status = 1;
 
       $stock_management_response = $stock_management->save();
 
@@ -1294,7 +1294,7 @@ class ApiController extends Controller
       $indicator_score->form_id = $summary->form_id;
       $indicator_score->created_by = Auth::user()->id;
       $indicator_score->visit_number = $summary->visit_number;
-      $indicator_score->upload_status = 0;
+      $indicator_score->upload_status = 1;
       $indicator_score->save();
     }
 
@@ -1320,7 +1320,7 @@ class ApiController extends Controller
       $indicator_score->form_id = $summary->form_id;
       $indicator_score->visit_number = $summary->visit_number;
       $indicator_score->updated_by = Auth::user()->id;
-      // $indicator_score->upload_status = 0;
+      // $indicator_score->upload_status = 1;
       $indicator_score->save();
 
     }
@@ -1359,7 +1359,7 @@ class ApiController extends Controller
       $storage10->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $storage10->form_id = $request->form_id;
       $storage10->created_by = Auth::user()->id;
-      $storage10->upload_status = 0;
+      $storage10->upload_status = 1;
       $storage10_response = $storage10->save();
     }
     else
@@ -1402,7 +1402,7 @@ class ApiController extends Controller
       $storage11->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $storage11->form_id = $request->form_id;
       $storage11->created_by = Auth::user()->id;
-      $storage11->upload_status = 0;
+      $storage11->upload_status = 1;
       $storage11_response = $storage11->save();
 
     }
@@ -1453,7 +1453,7 @@ class ApiController extends Controller
       $storage12->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $storage12->form_id = $request->form_id;
       $storage12->created_by = Auth::user()->id;
-      $storage12->upload_status = 0;
+      $storage12->upload_status = 1;
       $storage12_response = $storage12->save();
 
     }
@@ -1527,7 +1527,7 @@ class ApiController extends Controller
       $storage13->form_id = $request->form_id;
       $storage13->created_by = Auth::user()->id;
       $storage13->updated_by = Auth::user()->id;
-      $storage13->upload_status = 0;
+      $storage13->upload_status = 1;
       $storage13_response = $storage13->save();
 
     }
@@ -1608,7 +1608,7 @@ class ApiController extends Controller
       $storage14->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $storage14->form_id = $request->form_id;
       $storage14->created_by = Auth::user()->id;
-      $storage14->upload_status = 0;
+      $storage14->upload_status = 1;
       $storage14_response = $storage14->save();
 
     }
@@ -1729,7 +1729,7 @@ class ApiController extends Controller
       $ordering15->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $ordering15->form_id = $request->form_id;
       $ordering15->created_by = Auth::user()->id;
-      $ordering15->upload_status = 0;
+      $ordering15->upload_status = 1;
       $ordering15_response = $ordering15->save();
 
     }
@@ -1779,7 +1779,7 @@ class ApiController extends Controller
       $ordering16->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $ordering16->form_id = $request->form_id;
       $ordering16->created_by = Auth::user()->id;
-      $ordering16->upload_status = 0;
+      $ordering16->upload_status = 1;
       $ordering16_response = $ordering16->save();
 
     }
@@ -1824,7 +1824,7 @@ class ApiController extends Controller
       $ordering17->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
       $ordering17->form_id = $request->form_id;
       $ordering17->created_by = Auth::user()->id;
-      $ordering17->upload_status = 0;
+      $ordering17->upload_status = 1;
       $ordering17_response = $ordering17->save();
 
     }
@@ -1912,7 +1912,7 @@ class ApiController extends Controller
       $equipment18->visit_date = $summary->visit_date;
       $equipment18->form_id = $summary->form_id;
       $equipment18->created_by = Auth::user()->id;
-      $equipment18->upload_status = 0;
+      $equipment18->upload_status = 1;
 
 
       $equipment18->sub_indicator_18a = $request->lab_equipment_18a;
@@ -1963,7 +1963,7 @@ class ApiController extends Controller
       $equipment19->visit_date = $summary->visit_date;
       $equipment19->form_id = $summary->form_id;
       $equipment19->created_by = Auth::user()->id;
-      $equipment19->upload_status = 0;
+      $equipment19->upload_status = 1;
 
       $equipment19->sub_indicator_19a = $request->lab_equipment_19a=='NA'?-1:$request->lab_equipment_19a;
       $equipment19->sub_indicator_19b = $request->lab_equipment_19b=='NA'?-1:$request->lab_equipment_19b;
@@ -2137,7 +2137,7 @@ class ApiController extends Controller
       $equipment21->survey_summary_id = $summary->id;
       $equipment21->visit_date = $summary->visit_date;
       $equipment21->form_id = $summary->form_id;
-      $equipment21->upload_status = 0;
+      $equipment21->upload_status = 1;
       $equipment21->created_by = Auth::user()->id;
 
       $equipment21->sub_indicator_211ac = $request->cd4_facs_presto_21e2=='NA'?-1:$request->cd4_facs_presto_21e2;
@@ -2430,7 +2430,7 @@ class ApiController extends Controller
       $information_system23->sub_indicator_23b = $request->lab_info_system_23b=='NA'?-1:$request->lab_info_system_23b;
 
       $information_system23->indicator_23_comments  = $request->lab_info_system_23_comments;
-      $information_system23->upload_status = 0;
+      $information_system23->upload_status = 1;
 
       $info_system23_response = $information_system23->save();
 
@@ -2469,7 +2469,7 @@ class ApiController extends Controller
       $information_system24->survey_summary_id = $summary->id;
       $information_system24->visit_date = $summary->visit_date;
       $information_system24->form_id = $summary->form_id;
-      $information_system24->upload_status = 0;
+      $information_system24->upload_status = 1;
       $information_system24->created_by = Auth::user()->id;
 
 
@@ -2976,7 +2976,7 @@ class ApiController extends Controller
   {
 
 
-    $surveysummary = SurveySummary::where('step', '=', 6)->where('upload_status', '=', 0)->get();
+    $surveysummary = SurveySummary::where('step', '=', 6)->where('upload_status', '=', 1)->get();
 
 
     foreach ($surveysummary as $value ) {
@@ -2996,12 +2996,12 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into survey_summary (visit_date, next_visit_date,health_facility_id, created_at, updated_at,form_id, visit_number, created_by, updated_by,step,form_version) values (?, ?,?, ?,?, ?,?, ?,?, ?,?)', [$vd,$nvd,$hf,$ca,$ua,$fi,$vn,$cb,$ub,$st,$fv]);
 
-      DB::table('survey_summary')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('survey_summary')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
 
 
-    $supervised = SupervisedPerson::where('upload_status', '=', 0)->get();
+    $supervised = SupervisedPerson::where('upload_status', '=', 1)->get();
     foreach ($supervised as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3017,11 +3017,11 @@ class ApiController extends Controller
       $ua = $value->updated_at;
 
       DB::connection('mysql_remote')->insert('insert into spars_supervised (health_facility_id,form_id,visit_date, name, gender,cadre_id,phone_number, created_by,updated_by,created_at, updated_at) values (?,?, ?,?, ?,?, ?,?, ?,?,?)', [$hf,$fi,$vd,$nm,$gd,$ci,$pn,$cb,$ub,$ca,$ua]);
-      DB::table('spars_supervised')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_supervised')->where('upload_status','=',1)->update(['upload_status' => 2]);
 
     }
 
-    $supervisor = Supervisor::where('upload_status', '=', 0)->get();
+    $supervisor = Supervisor::where('upload_status', '=', 1)->get();
     foreach ($supervisor as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3035,11 +3035,11 @@ class ApiController extends Controller
       // $us = $value->upload_status;
 
      DB::connection('mysql_remote')->insert('insert into spars_supervisors (health_facility_id,form_id,visit_date, person_id, created_by,updated_by,created_at, updated_at) values (?,?,?,?,?,?,?,?)', [$hf,$fi,$vd,$pi,$cd,$ub,$ca,$ua]);
-       DB::table('spars_supervisors')->where('upload_status','=',0)->update(['upload_status' => 1]);
+       DB::table('spars_supervisors')->where('upload_status','=',1)->update(['upload_status' => 2]);
 
     }
 
-    $healthfacility = HealthFacility::where('upload_status', '=', 0)->get();
+    $healthfacility = HealthFacility::where('upload_status', '=', 1)->get();
     foreach ($healthfacility as $value ) {
       // code...
         $dhi = $value->dhis2_uid;
@@ -3060,10 +3060,10 @@ class ApiController extends Controller
         // $us = $value->upload_status;
 
      DB::connection('mysql_remote')->insert('insert into health_facilities (dhis2_uid,region,district, hsd,facility, level, ownership,in_charge_fname, in_charge_lname, in_charge_contact, lss_fname, lss_lname, lss_contact,visit_number, is_control_facility) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$dhi,$rgn,$dst,$hsd,$fc,$lvl,$own,$ifn,$iln,$ic,$lfn,$lfn,$lct,$vn,$icf]);
-       DB::table('health_facilities')->where('upload_status','=',0)->update(['upload_status' => 1]);
+       DB::table('health_facilities')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $general = General::where('upload_status', '=', 0)->get();
+    $general = General::where('upload_status', '=', 1)->get();
     foreach ($general as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3093,10 +3093,10 @@ class ApiController extends Controller
       $ua = $value->updated_at;
       // $upload_status;
       DB::connection('mysql_remote')->insert('insert into spars_general (health_facility_id,form_id,d1,d2a,d2b,d2c,d2d,d2e,d2f,d2comment,d3,d3comment,d4a,d4b,d4c,d4d,d4e,d4f,d4comment,d5,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[$hf,$fi,$d1,$d2a,$d2b,$d2c,$d2d,$d2e,$d2f,$d2c,$d3,$d3ct,$d4a,$d4b,$d4c,$d4d,$d4e,$d4f,$d4ct,$d5,$vd,$cb,$ub,$ca,$ua]);
-        DB::table('spars_general')->where('upload_status','=',0)->update(['upload_status' => 1]);
+        DB::table('spars_general')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $stockMgt = StockManagement::where('upload_status', '=', 0)->get();
+    $stockMgt = StockManagement::where('upload_status', '=', 1)->get();
     foreach ($stockMgt as $value ) {
       // code...
 
@@ -3355,10 +3355,10 @@ class ApiController extends Controller
       $updated_at = $value->updated_at;
 
       DB::connection('mysql_remote')->insert('insert into stock_management (health_facility_id,survey_summary_id,form_id,r1c1,r1c2,r1c3,r1c4,r1c5,r1c6,r1c7,r1c8,r1c9,r1c10,r1c11,r1c12,r1c13,r1c14,r1c15,r1c16,r1c17,r1c18,r1c19,r1c20,r1c21,r1c22,r2c1,r2c2_cd4item,r2c2,r2c3,r2c4,r2c5,r2c6,r2c7,r2c8,r2c9,r2c10,r2c11,r2c12,r2c13,r2c14,r2c15,r2c16,r2c17,r2c18,r2c19,r2c20,r2c21,r2c22,r3c1,r3c2,r3c3,r3c4,r3c5,r3c6,r3c7,r3c8,r3c9,r3c10,r3c11,r3c12,r3c13,r3c14,r3c15,r3c16,r3c17,r3c18,r3c19,r3c20,r3c21,r3c22,r4c1,r4c2,r4c3,r4c4,r4c5,r4c6,r4c7,r4c8,r4c9,r4c10,r4c11,r4c12,r4c13,r4c14,r4c15,r4c16,r4c17,r4c18,r4c19,r4c20,r4c21,r4c22,r5c1,r5c2,r5c3,r5c4,r5c5,r5c6,r5c7,r5c8,r5c9,r5c10,r5c11,r5c12,r5c13,r5c14,r5c15,r5c16,r5c17,r5c18,r5c19,r5c20,r5c21,r5c22,r6c1,r6c2,r6c3,r6c4,r6c5,r6c6,r6c7,r6c8,r6c9,r6c10,r6c11,r6c12,r6c13,r6c14,r6c15,r6c16,r6c17,r6c18,r6c19,r6c20,r6c21,r6c22,r7c1,r7c2,r7c3,r7c4,r7c5,r7c6,r7c7,r7c8,r7c9,r7c10,r7c11,r7c12,r7c13,r7c14,r7c15,r7c16,r7c17,r7c18,r7c19,r7c20,r7c21,r7c22,r8c1,r8c2,r8c3,r8c4,r8c5,r8c6,r8c7,r8c8,r8c9,r8c10,r8c11,r8c12,r8c13,r8c14,r8c15,r8c16,r8c17,r8c18,r8c19,r8c20,r8c21,r8c22,r9c1,r9c2,r9c3,r9c4,r9c5,r9c6,r9c7,r9c8,r9c9,r9c10,r9c11,r9c12,r9c13,r9c14,r9c15,r9c16,r9c17,r9c18,r9c19,r9c20,r9c21,r9c22,r10c1,r10c2,r10c3,r10c4,r10c5,r10c6,r10c7,r10c8,r10c9,r10c10,r10c11,r10c12,r10c13,r10c14,r10c15,r10c16,r10c17,r10c18,r10c19,r10c20,r10c21,r10c22,r11c1,r11c2,r11c3,r11c4,r11c5,r11c6,r11c7,r11c8,r11c9,r11c10,r11c11,r11c12,r11c13,r11c14,r11c15,r11c16,r11c17,r11c18,r11c19,r11c20,r11c21,r11c22,stock_management_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[$health_facility_id,$survey_summary_id,$form_id,$r1c1,$r1c2,$r1c3,$r1c4,$r1c5,$r1c6,$r1c7,$r1c8,$r1c9,$r1c10,$r1c11,$r1c12,$r1c13,$r1c14,$r1c15,$r1c16,$r1c17,$r1c18,$r1c19,$r1c20,$r1c21,$r1c22,$r2c1,$r2c2_cd4item,$r2c2,$r2c3,$r2c4,$r2c5,$r2c6,$r2c7,$r2c8,$r2c9,$r2c10,$r2c11,$r2c12,$r2c13,$r2c14,$r2c15,$r2c16,$r2c17,$r2c18,$r2c19,$r2c20,$r2c21,$r2c22,$r3c1,$r3c2,$r3c3,$r3c4,$r3c5,$r3c6,$r3c7,$r3c8,$r3c9,$r3c10,$r3c11,$r3c12,$r3c13,$r3c14,$r3c15,$r3c16,$r3c17,$r3c18,$r3c19,$r3c20,$r3c21,$r3c22,$r4c1,$r4c2,$r4c3,$r4c4,$r4c5,$r4c6,$r4c7,$r4c8,$r4c9,$r4c10,$r4c11,$r4c12,$r4c13,$r4c14,$r4c15,$r4c16,$r4c17,$r4c18,$r4c19,$r4c20,$r4c21,$r4c22,$r5c1,$r5c2,$r5c3,$r5c4,$r5c5,$r5c6,$r5c7,$r5c8,$r5c9,$r5c10,$r5c11,$r5c12,$r5c13,$r5c14,$r5c15,$r5c16,$r5c17,$r5c18,$r5c19,$r5c20,$r5c21,$r5c22,$r6c1,$r6c2,$r6c3,$r6c4,$r6c5,$r6c6,$r6c7,$r6c8,$r6c9,$r6c10,$r6c11,$r6c12,$r6c13,$r6c14,$r6c15,$r6c16,$r6c17,$r6c18,$r6c19,$r6c20,$r6c21,$r6c22,$r7c1,$r7c2,$r7c3,$r7c4,$r7c5,$r7c6,$r7c7,$r7c8,$r7c9,$r7c10,$r7c11,$r7c12,$r7c13,$r7c14,$r7c15,$r7c16,$r7c17,$r7c18,$r7c19,$r7c20,$r7c21,$r7c22,$r8c1,$r8c2,$r8c3,$r8c4,$r8c5,$r8c6,$r8c7,$r8c8,$r8c9,$r8c10,$r8c11,$r8c12,$r8c13,$r8c14,$r8c15,$r8c16,$r8c17,$r8c18,$r8c19,$r8c20,$r8c21,$r8c22,$r9c1,$r9c2,$r9c3,$r9c4,$r9c5,$r9c6,$r9c7,$r9c8,$r9c9,$r9c10,$r9c11,$r9c12,$r9c13,$r9c14,$r9c15,$r9c16,$r9c17,$r9c18,$r9c19,$r9c20,$r9c21,$r9c22,$r10c1,$r10c2,$r10c3,$r10c4,$r10c5,$r10c6,$r10c7,$r10c8,$r10c9,$r10c10,$r10c11,$r10c12,$r10c13,$r10c14,$r10c15,$r10c16,$r10c17,$r10c18,$r10c19,$r10c20,$r10c21,$r10c22,$r11c1,$r11c2,$r11c3,$r11c4,$r11c5,$r11c6,$r11c7,$r11c8,$r11c9,$r11c10,$r11c11,$r11c12,$r11c13,$r11c14,$r11c15,$r11c16,$r11c17,$r11c18,$r11c19,$r11c20,$r11c21,$r11c22,$stock_management_comments,$score,$visit_date,$created_by,$updated_by,$created_at,$updated_at]);
-        DB::table('stock_management')->where('upload_status','=',0)->update(['upload_status' => 1]);
+        DB::table('stock_management')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $scoresummary = IndicatorScoreSummary::where('upload_status', '=', 0)->get();
+    $scoresummary = IndicatorScoreSummary::where('upload_status', '=', 1)->get();
     foreach ($scoresummary as $value ) {
       // code...
       $hfi = $value->health_facility_id;
@@ -3400,10 +3400,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_summary_scores(health_facility_id,survey_summary_id,form_id,indicator1_score,indicator2_score,indicator3_score,indicator4_score,indicator5_score,indicator6_score,indicator7_score,indicator8_score,indicator9_score,indicator10_score,indicator11_score,indicator12_score,indicator13_score,indicator14_score,indicator15_score,indicator16_score,indicator17_score,indicator18_score,indicator19_score,indicator20_score,indicator21_score,indicator22_score,indicator23_score,indicator24_score,indicator25_score,indicator26_score,indicator27_score,visit_number,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hfi,$ssi,$fid,$i1,$i2,$i3,$i4,$i5,$i6,$i7,$i8,$i9,$i10,$i11,$i12,$i13,$i14,$i15,$i16,$i17,$i18,$i19,$i20,$i21,$i22,$i23,$i24,$i25,$i26,$i27,$vn,$vd,$cb,$ub,$ca,$ua]);
 
-        DB::table('spars_summary_scores')->where('upload_status','=',0)->update(['upload_status' => 1]);
+        DB::table('spars_summary_scores')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $storage10 = StorageManagement10::where('upload_status', '=', 0)->get();
+    $storage10 = StorageManagement10::where('upload_status', '=', 1)->get();
     foreach ($storage10 as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3422,11 +3422,11 @@ class ApiController extends Controller
       $ua = $value->updated_at;
 
       DB::connection('mysql_remote')->insert('insert into spars_storage_management_10 (health_facility_id,survey_summary_id,form_id,sub_indicator_10a,sub_indicator_10b,sub_indicator_10c,sub_indicator_10d,indicator_10_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$ssi,$fi,$s10a,$s10b,$s10c,$s10d,$i10,$sc,$vd,$cb,$ub,$ca,$ua]);
-      DB::table('spars_storage_management_10')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_storage_management_10')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
 
-    $storage11 = StorageManagement11::where('upload_status', '=', 0)->get();
+    $storage11 = StorageManagement11::where('upload_status', '=', 1)->get();
     foreach ($storage11 as $value ) {
       // code...
       $hi = $value->health_facility_id;
@@ -3446,10 +3446,10 @@ class ApiController extends Controller
       $ua = $value->updated_at;
 
       DB::connection('mysql_remote')->insert('insert into spars_storage_management_11 (health_facility_id,survey_summary_id,form_id,sub_indicator_11a,sub_indicator_11b,sub_indicator_11c,sub_indicator_11d,sub_indicator_11e,indicator_11_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)', [$hi,$ss,$fi,$s11a,$s11b,$s11c,$s11d,$s11e,$scm,$sc,$vd,$cb,$ub,$ca,$ua]);
-      DB::table('spars_storage_management_11')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_storage_management_11')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $storage12 = StorageManagement12::where('upload_status', '=', 0)->get();
+    $storage12 = StorageManagement12::where('upload_status', '=', 1)->get();
     foreach ($storage12 as $value ) {
       // code...
       $hi = $value->health_facility_id;
@@ -3475,10 +3475,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_storage_management_12 (health_facility_id,survey_summary_id,form_id,sub_indicator_12a_main_store,sub_indicator_12b_main_store,sub_indicator_12c_main_store,sub_indicator_12d_main_store,sub_indicator_12e_main_store,sub_indicator_12a_lab_store,sub_indicator_12b_lab_store,sub_indicator_12c_lab_store,sub_indicator_12d_lab_store,sub_indicator_12e_lab_store,score,indicator_12_comments,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hi,$ss,$fi,$s12a,$s12b,$s12c,$s12d,$s12e,$sl12a,$sl12b,$sl12c,$sl12d,$sl12e,$sc,$i12cm,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_storage_management_12')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_storage_management_12')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $storage13 = StorageManagement13::where('upload_status', '=', 0)->get();
+    $storage13 = StorageManagement13::where('upload_status', '=', 1)->get();
     foreach ($storage13 as $value ) {
       // code...
       $hi = $value->health_facility_id;
@@ -3518,10 +3518,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_storage_management_13 (health_facility_id,survey_summary_id,form_id,sub_indicator_13a_main_store,sub_indicator_13b_main_store,sub_indicator_13c_main_store,sub_indicator_13d_main_store,sub_indicator_13e_main_store,sub_indicator_13f_main_store,sub_indicator_13g_main_store,sub_indicator_13h_main_store,sub_indicator_13i_main_store,sub_indicator_13j_main_store,sub_indicator_13k_main_store,sub_indicator_13l_main_store,sub_indicator_13a_lab_store,sub_indicator_13b_lab_store,sub_indicator_13c_lab_store,sub_indicator_13d_lab_store,sub_indicator_13e_lab_store,sub_indicator_13f_lab_store,sub_indicator_13g_lab_store,sub_indicator_13h_lab_store,sub_indicator_13i_lab_store,sub_indicator_13j_lab_store,sub_indicator_13k_lab_store,sub_indicator_13l_lab_store,score,indicator_13_comments,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hi,$si,$fi,$i13ma,$i13mb,$i13mc,$i13md,$i13me,$i13mf,$i13mg,$i13mh,$i13mi,$i13mj,$i13mk,$i13ml,$i13la,$i13lb,$i13lc,$i13ld,$i13le,$i13lf,$i13lg,$i13lh,$i13li,$i13lj,$i13lk,$i13ll,$sc,$i13cm,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_storage_management_13')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_storage_management_13')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $storage14 = StorageManagement14::where('upload_status', '=', 0)->get();
+    $storage14 = StorageManagement14::where('upload_status', '=', 1)->get();
     foreach ($storage14 as $value ) {
       // code...
 
@@ -3554,10 +3554,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_storage_management_14 (health_facility_id,survey_summary_id,form_id,sub_indicator_14a_main_store,sub_indicator_14b_main_store,sub_indicator_14c_main_store,sub_indicator_14d_main_store,sub_indicator_14e_main_store,sub_indicator_14f_main_store,sub_indicator_14g_main_store,sub_indicator_14h_main_store,sub_indicator_14a_lab_store,sub_indicator_14b_lab_store,sub_indicator_14c_lab_store,sub_indicator_14d_lab_store,sub_indicator_14e_lab_store,sub_indicator_14f_lab_store,sub_indicator_14g_lab_store,sub_indicator_14h_lab_store,score,indicator_14_comments,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hi,$si,$fi,$i14ma,$i14mb,$i14mc,$i14md,$i14me,$i14mf,$i14mg,$i14mh,$i14la,$i14lb,$i14lc,$i14ld,$i14le,$i14lf,$i14lg,$i14lh,$sc,$i14c,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_storage_management_14')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_storage_management_14')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $ordering15 = Ordering15::where('upload_status', '=', 0)->get();
+    $ordering15 = Ordering15::where('upload_status', '=', 1)->get();
     foreach ($ordering15 as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3579,10 +3579,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_ordering_15 (health_facility_id,survey_summary_id,form_id,sub_indicator_15a,sub_indicator_15a_soh,sub_indicator_15a_issued,sub_indicator_15a_amc,sub_indicator_15b,sub_indicator_15c,score,indicator_15_comments,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i15a,$i15asoh,$i15ai,$i15am,$i15b,$i15c,$sc,$i15cm,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_ordering_15')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_ordering_15')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $ordering16 = Ordering16::where('upload_status', '=', 0)->get();
+    $ordering16 = Ordering16::where('upload_status', '=', 1)->get();
     foreach ($ordering16 as $value ) {
       // code...
       $hf   = $value->health_facility_id;
@@ -3594,7 +3594,7 @@ class ApiController extends Controller
       $i16d = $value->sub_indicator_16d;
       $i16e = $value->sub_indicator_16e;
       $i16f = $value->sub_indicator_16f;
-      $i16c = $value->indicator_16_comments;
+      $i16cm = $value->indicator_16_comments;
       $sc   = $value->score;
       $vd   = $value->visit_date;
       $cb   = $value->created_by;
@@ -3602,12 +3602,12 @@ class ApiController extends Controller
       $ca   = $value->created_at;
       $ua   = $value->updated_at;
 
-      DB::connection('mysql_remote')->insert('insert into spars_ordering_16 (health_facility_id,survey_summary_id,form_id,sub_indicator_16a,sub_indicator_16b,sub_indicator_16c,sub_indicator_16d,sub_indicator_16e,sub_indicator_16f,indicator_16_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i16a,$i16b,$i16c,$i16d,$i16e,$i16f,$i16c,$sc,$vd,$cb,$ub,$ca,$ua]);
+      DB::connection('mysql_remote')->insert('insert into spars_ordering_16 (health_facility_id,survey_summary_id,form_id,sub_indicator_16a,sub_indicator_16b,sub_indicator_16c,sub_indicator_16d,sub_indicator_16e,sub_indicator_16f,indicator_16_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i16a,$i16b,$i16c,$i16d,$i16e,$i16f,$i16cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_ordering_16')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_ordering_16')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $ordering17 = Ordering17::where('upload_status', '=', 0)->get();
+    $ordering17 = Ordering17::where('upload_status', '=', 1)->get();
     foreach ($ordering17 as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3624,10 +3624,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_ordering_17 (health_facility_id,survey_summary_id,form_id,sub_indicator_17a,indicator_17_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i17a,$i17cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_ordering_17')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_ordering_17')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $equipment18 = Equipment18::where('upload_status', '=', 0)->get();
+    $equipment18 = Equipment18::where('upload_status', '=', 1)->get();
     foreach ($equipment18 as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3647,10 +3647,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into equipment_18 (health_facility_id,survey_summary_id,form_id,sub_indicator_18a,sub_indicator_18b,sub_indicator_18c,sub_indicator_18d,indicator_18_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i18a,$i18b,$i18c,$i18d,$i18cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('equipment_18')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('equipment_18')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $equipment19 = Equipment19::where('upload_status', '=', 0)->get();
+    $equipment19 = Equipment19::where('upload_status', '=', 1)->get();
     foreach ($equipment19 as $value ) {
       // code...
       $hf = $value->health_facility_id;
@@ -3670,10 +3670,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into equipment_19 (health_facility_id,survey_summary_id,form_id,sub_indicator_19a,sub_indicator_19b,sub_indicator_19c,sub_indicator_19d,indicator_19_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i19a,$i19b,$i19c,$i19d,$i19cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('equipment_19')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('equipment_19')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $equipment20 = Equipment20::where('upload_status', '=', 0)->get();
+    $equipment20 = Equipment20::where('upload_status', '=', 1)->get();
     foreach ($equipment20 as $value ) {
       // code...
       $hi = $value->health_facility_id;
@@ -3728,10 +3728,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into equipment_20 (health_facility_id,survey_summary_id,form_id,sub_indicator_20a1,sub_indicator_20a2,sub_indicator_20a3,sub_indicator_20a4,sub_indicator_20a5,sub_indicator_20a6,sub_indicator_20b1,sub_indicator_20b2,sub_indicator_20b3,sub_indicator_20b4,sub_indicator_20b5,sub_indicator_20b6,sub_indicator_20c1,sub_indicator_20c2,sub_indicator_20c3,sub_indicator_20c4,sub_indicator_20c5,sub_indicator_20c6,sub_indicator_20d1,sub_indicator_20d2,sub_indicator_20d3,sub_indicator_20d4,sub_indicator_20d5,sub_indicator_20d6,sub_indicator_20e1,sub_indicator_20e2,sub_indicator_20e3,sub_indicator_20e4,sub_indicator_20e5,sub_indicator_20e6,sub_indicator_20f1,sub_indicator_20f2,sub_indicator_20f3,sub_indicator_20f4,sub_indicator_20f5,sub_indicator_20f6,indicator_20_comments,score,visit_date,created_by,updated_by,created_at,updated_at,cd4_machine,chemistry_machine,heamatology_machine)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[$hi,$si,$fi,$i20a1,$i20a2,$i20a3,$i20a4,$i20a5,$i20a6,$i20b1,$i20b2,$i20b3,$i20b4,$i20b5,$i20b6,$i20c1,$i20c2,$i20c3,$i20c4,$i20c5,$i20c6,$i20d1,$i20d2,$i20d3,$i20d4,$i20d5,$i20d6,$i20e1,$i20e2,$i20e3,$i20e4,$i20e5,$i20e6,$i20f1,$i20f2,$i20f3,$i20f4,$i20f5,$i20f6,$i20cm,$sc,$vd,$cb,$ub,$ca,$ua,$cd4,$chm,$hem]);
 
-      DB::table('equipment_20')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('equipment_20')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $equipment21 = Equipment21::where('upload_status', '=', 0)->get();
+    $equipment21 = Equipment21::where('upload_status', '=', 1)->get();
     foreach ($equipment21 as $value ) {
       // code...
       $fi      = $value->health_facility_id;
@@ -3899,10 +3899,10 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into equipment_21 (health_facility_id,survey_summary_id,form_id,sub_indicator_211ab,sub_indicator_211ac,sub_indicator_211ad,sub_indicator_211ae,sub_indicator_211af,sub_indicator_211ag,sub_indicator_211ah,sub_indicator_211ai,sub_indicator_211bb,sub_indicator_211bc,sub_indicator_211bd,sub_indicator_211be,sub_indicator_211bf,sub_indicator_211bg,sub_indicator_211bh,sub_indicator_211bi,sub_indicator_211cb,sub_indicator_211cc,sub_indicator_211cd,sub_indicator_211ce,sub_indicator_211cf,sub_indicator_211cg,sub_indicator_211ch,sub_indicator_211ci,sub_indicator_211db,sub_indicator_211dc,sub_indicator_211dd,sub_indicator_211de,sub_indicator_211df,sub_indicator_211dg,sub_indicator_211dh,sub_indicator_211di,sub_indicator_211eb,sub_indicator_211ec,sub_indicator_211ed,sub_indicator_211ee,sub_indicator_211ef,sub_indicator_211eg,sub_indicator_211eh,sub_indicator_211ei,sub_indicator_212ab,sub_indicator_212ac,sub_indicator_212ad,sub_indicator_212ae,sub_indicator_212af,sub_indicator_212ag,sub_indicator_212ah,sub_indicator_212ai,sub_indicator_212bb,sub_indicator_212bc,sub_indicator_212bd,sub_indicator_212be,sub_indicator_212bf,sub_indicator_212bg,sub_indicator_212bh,sub_indicator_212bi,sub_indicator_213ab,sub_indicator_213ac,sub_indicator_213ad,sub_indicator_213ae,sub_indicator_213af,sub_indicator_213ag,sub_indicator_213ah,sub_indicator_213ai,sub_indicator_213bb,sub_indicator_213bc,sub_indicator_213bd,sub_indicator_213be,sub_indicator_213bf,sub_indicator_213bg,sub_indicator_213bh,sub_indicator_213bi,sub_indicator_213cb,sub_indicator_213cc,sub_indicator_213cd,sub_indicator_213ce,sub_indicator_213cf,sub_indicator_213cg,sub_indicator_213ch,sub_indicator_213ci,sub_indicator_213db,sub_indicator_213dc,sub_indicator_213dd,sub_indicator_213de,sub_indicator_213df,sub_indicator_213dg,sub_indicator_213dh,sub_indicator_213di,sub_indicator_213eb,sub_indicator_213ec,sub_indicator_213ed,sub_indicator_213ee,sub_indicator_213ef,sub_indicator_213eg,sub_indicator_213eh,sub_indicator_213ei,sub_indicator_213fb,sub_indicator_213fc,sub_indicator_213fd,sub_indicator_213fe,sub_indicator_213ff,sub_indicator_213fg,sub_indicator_213fh,sub_indicator_213fi,sub_indicator_213gb,sub_indicator_213gc,sub_indicator_213gd,sub_indicator_213ge,sub_indicator_213gf,sub_indicator_213gg,sub_indicator_213gh,sub_indicator_213gi,sub_indicator_213hb,sub_indicator_213hc,sub_indicator_213hd,sub_indicator_213he,sub_indicator_213hf,sub_indicator_213hg,sub_indicator_213hh,sub_indicator_213hi,sub_indicator_213ib,sub_indicator_213ic,sub_indicator_213id,sub_indicator_213ie,sub_indicator_213if,sub_indicator_213ig,sub_indicator_213ih,sub_indicator_213ii,sub_indicator_213jb,sub_indicator_213jc,sub_indicator_213jd,sub_indicator_213je,sub_indicator_213jf,sub_indicator_213jg,sub_indicator_213jh,sub_indicator_213ji,indicator_21_comments,score,visit_date,created_by,updated_by,created_at,updated_at,sub_indicator_212cb,sub_indicator_212cc,sub_indicator_212cd,sub_indicator_212ce,sub_indicator_212cf,sub_indicator_212cg,sub_indicator_212ch,sub_indicator_212ci,sub_indicator_212db,sub_indicator_212dc,sub_indicator_212dd,sub_indicator_212de,sub_indicator_212df,sub_indicator_212dg,sub_indicator_212dh,sub_indicator_212di) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$fi,$si,$fi,$si211ab,$si211ac,$si211ad,$si211ae,$si211af,$si211ag,$si211ah,$si211ai,$si211bb,$si211bc,$si211bd,$si211be,$si211bf,$si211bg,$si211bh,$si211bi,$si211cb,$si211cc,$si211cd,$si211ce,$si211cf,$si211cg,$si211ch,$si211ci,$si211db,$si211dc,$si211dd,$si211de,$si211df,$si211dg,$si211dh,$si211di,$si211eb,$si211ec,$si211ed,$si211ee,$si211ef,$si211eg,$si211eh,$si211ei,$si212ab,$si212ac,$si212ad,$si212ae,$si212af,$si212ag,$si212ah,$si212ai,$si212bb,$si212bc,$si212bd,$si212be,$si212bf,$si212bg,$si212bh,$si212bi,$si213ab,$si213ac,$si213ad,$si213ae,$si213af,$si213ag,$si213ah,$si213ai,$si213bb,$si213bc,$si213bd,$si213be,$si213bf,$si213bg,$si213bh,$si213bi,$si213cb,$si213cc,$si213cd,$si213ce,$si213cf,$si213cg,$si213ch,$si213ci,$si213db,$si213dc,$si213dd,$si213de,$si213df,$si213dg,$si213dh,$si213di,$si213eb,$si213ec,$si213ed,$si213ee,$si213ef,$si213eg,$si213eh,$si213ei,$si213fb,$si213fc,$si213fd,$si213fe,$si213ff,$si213fg,$si213fh,$si213fi,$si213gb,$si213gc,$si213gd,$si213ge,$si213gf,$si213gg,$si213gh,$si213gi,$si213hb,$si213hc,$si213hd,$si213he,$si213hf,$si213hg,$si213hh,$si213hi,$si213ib,$si213ic,$si213id,$si213ie,$si213if,$si213ig,$si213ih,$si213ii,$si213jb,$si213jc,$si213jd,$si213je,$si213jf,$si213jg,$si213jh,$si213ji,$si21cmt,$sc,$vd,$cb,$ub,$ca,$ua,$si212cb,$si212cc,$si212cd,$si212ce,$si212cf,$si212cg,$si212ch,$si212ci,$si212db,$si212dc,$si212dd,$si212de,$si212df,$si212dg,$si212dh,$si212di]);
 
-      DB::table('equipment_21')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('equipment_21')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
-    $infosys22 = InformationSystem22::where('upload_status', '=', 0)->get();
+    $infosys22 = InformationSystem22::where('upload_status', '=', 1)->get();
     foreach ($infosys22 as $value ) {
       // code...
       $hf    = $value->health_facility_id;
@@ -3932,11 +3932,11 @@ class ApiController extends Controller
 
       DB::connection('mysql_remote')->insert('insert into spars_info_system_22 (health_facility_id,survey_summary_id,form_id,sub_indicator_22a,sub_indicator_22b,sub_indicator_22c,sub_indicator_22d,sub_indicator_22e,sub_indicator_22f,sub_indicator_22g,sub_indicator_22h,sub_indicator_22i,sub_indicator_22j,sub_indicator_22k,sub_indicator_22l,sub_indicator_22m,sub_indicator_22n,indicator_22_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$si22a,$si22b,$si22c,$si22d,$si22e,$si22f,$si22g,$si22h,$si22i,$si22j,$si22k,$si22l,$si22m,$si22n,$sicmt,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-      DB::table('spars_info_system_22')->where('upload_status','=',0)->update(['upload_status' => 1]);
+      DB::table('spars_info_system_22')->where('upload_status','=',1)->update(['upload_status' => 2]);
     }
 
 
-        $infosys23 = InformationSystem23::where('upload_status', '=', 0)->get();
+        $infosys23 = InformationSystem23::where('upload_status', '=', 1)->get();
         foreach ($infosys23 as $value ) {
           // code...
           $hf = $value->health_facility_id;
@@ -3954,10 +3954,10 @@ class ApiController extends Controller
 
           DB::connection('mysql_remote')->insert('insert into spars_info_system_23 (health_facility_id,survey_summary_id,form_id,sub_indicator_23a,sub_indicator_23b,indicator_23_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i23a,$i23b,$i23cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-          DB::table('spars_info_system_23')->where('upload_status','=',0)->update(['upload_status' => 1]);
+          DB::table('spars_info_system_23')->where('upload_status','=',1)->update(['upload_status' => 2]);
         }
 
-        $infosys24 = InformationSystem24::where('upload_status', '=', 0)->get();
+        $infosys24 = InformationSystem24::where('upload_status', '=', 1)->get();
         foreach ($infosys24 as $value ) {
           // code...
           $hf = $value->health_facility_id;
@@ -3976,10 +3976,10 @@ class ApiController extends Controller
 
           DB::connection('mysql_remote')->insert('insert into spars_info_system_24 (health_facility_id,survey_summary_id,form_id,sub_indicator_24a,sub_indicator_24b,sub_indicator_24c, indicator_24_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$i24a,$i24b,$i24c,$i24cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-          DB::table('spars_info_system_24')->where('upload_status','=',0)->update(['upload_status' => 1]);
+          DB::table('spars_info_system_24')->where('upload_status','=',1)->update(['upload_status' => 2]);
         }
 
-        $infosys25 = InformationSystem25::where('upload_status', '=', 0)->get();
+        $infosys25 = InformationSystem25::where('upload_status', '=', 1)->get();
         foreach ($infosys25 as $value ) {
           // code...
           $hf = $value->health_facility_id;
@@ -4079,10 +4079,10 @@ class ApiController extends Controller
 
           DB::connection('mysql_remote')->insert('insert into spars_info_system_25 (health_facility_id,survey_summary_id,form_id,sub_indicator_25aa,sub_indicator_25ab,sub_indicator_25ac,sub_indicator_25ba1,sub_indicator_25ba2,sub_indicator_25ba3,sub_indicator_25ba4,sub_indicator_25ba5,sub_indicator_25ba6,sub_indicator_25ba7,sub_indicator_25ba8,sub_indicator_25bb1,sub_indicator_25bb2,sub_indicator_25bb3,sub_indicator_25bb4,sub_indicator_25bb5,sub_indicator_25bb6,sub_indicator_25bb7,sub_indicator_25bb8,sub_indicator_25bc1,sub_indicator_25bc2,sub_indicator_25bc3,sub_indicator_25bc4,sub_indicator_25bc5,sub_indicator_25bc6,sub_indicator_25bc7,sub_indicator_25bc8,sub_indicator_cd4item,sub_indicator_25bd1,sub_indicator_25bd2,sub_indicator_25bd3,sub_indicator_25bd4,sub_indicator_25bd5,sub_indicator_25bd6,sub_indicator_25bd7,sub_indicator_25bd8,sub_indicator_25be1,sub_indicator_25be2,sub_indicator_25be3,sub_indicator_25be4,sub_indicator_25be5,sub_indicator_25be6,sub_indicator_25be7,sub_indicator_25be8,sub_indicator_25bf1,sub_indicator_25bf2,sub_indicator_25bf3,sub_indicator_25bf4,sub_indicator_25bf5,sub_indicator_25bf6,sub_indicator_25bf7,sub_indicator_25bf8,sub_indicator_25bg1,sub_indicator_25bg2,sub_indicator_25bg3,sub_indicator_25bg4,sub_indicator_25bg5,sub_indicator_25bg6,sub_indicator_25bg7,sub_indicator_25bg8,sub_indicator_25ca1,sub_indicator_25ca2,sub_indicator_25ca3,sub_indicator_25ca4,sub_indicator_25cb1,sub_indicator_25cb2,sub_indicator_25cb3,sub_indicator_25cb4,sub_indicator_25cc1,sub_indicator_25cc2,sub_indicator_25cc3,sub_indicator_25cc4,sub_indicator_25cd1,sub_indicator_25cd2,sub_indicator_25cd3,sub_indicator_25cd4,sub_indicator_25ce1,sub_indicator_25ce2,sub_indicator_25ce3,sub_indicator_25ce4,sub_indicator_25cf1,sub_indicator_25cf2,sub_indicator_25cf3,sub_indicator_25cf4,indicator_25_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$si25aa,$si25ab,$si25ac,$si25ba1,$si25ba2,$si25ba3,$si25ba4,$si25ba5,$si25ba6,$si25ba7,$si25ba8,$si25bb1,$si25bb2,$si25bb3,$si25bb4,$si25bb5,$si25bb6,$si25bb7,$si25bb8,$si25bc1,$si25bc2,$si25bc3,$si25bc4,$si25bc5,$si25bc6,$si25bc7,$si25bc8,$sicd4cd,$si25bd1,$si25bd2,$si25bd3,$si25bd4,$si25bd5,$si25bd6,$si25bd7,$si25bd8,$si25be1,$si25be2,$si25be3,$si25be4,$si25be5,$si25be6,$si25be7,$si25be8,$si25bf1,$si25bf2,$si25bf3,$si25bf4,$si25bf5,$si25bf6,$si25bf7,$si25bf8,$si25bg1,$si25bg2,$si25bg3,$si25bg4,$si25bg5,$si25bg6,$si25bg7,$si25bg8,$si25ca1,$si25ca2,$si25ca3,$si25ca4,$si25cb1,$si25cb2,$si25cb3,$si25cb4,$si25cc1,$si25cc2,$si25cc3,$si25cc4,$si25cd1,$si25cd2,$si25cd3,$si25cd4,$si25ce1,$si25ce2,$si25ce3,$si25ce4,$si25cf1,$si25cf2,$si25cf3,$si25cf4,$i25cmnt,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-          DB::table('spars_info_system_25')->where('upload_status','=',0)->update(['upload_status' => 1]);
+          DB::table('spars_info_system_25')->where('upload_status','=',1)->update(['upload_status' => 2]);
         }
 
-        $infosys26 = InformationSystem26::where('upload_status', '=', 0)->get();
+        $infosys26 = InformationSystem26::where('upload_status', '=', 1)->get();
         foreach ($infosys26 as $value ) {
           // code...
           $hf = $value->health_facility_id;
@@ -4100,10 +4100,10 @@ class ApiController extends Controller
 
           DB::connection('mysql_remote')->insert('insert into spars_info_system_26 (health_facility_id,survey_summary_id,form_id,sub_indicator_26a,sub_indicator_26b,indicator_26_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$si26a,$si26b,$si26cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-          DB::table('spars_info_system_26')->where('upload_status','=',0)->update(['upload_status' => 1]);
+          DB::table('spars_info_system_26')->where('upload_status','=',1)->update(['upload_status' => 2]);
         }
 
-        $infosys27 = InformationSystem27::where('upload_status', '=', 0)->get();
+        $infosys27 = InformationSystem27::where('upload_status', '=', 1)->get();
         foreach ($infosys27 as $value ) {
           // code...
           $hf = $value->health_facility_id;
@@ -4123,7 +4123,7 @@ class ApiController extends Controller
 
           DB::connection('mysql_remote')->insert('insert into spars_info_system_27 (health_facility_id,survey_summary_id,form_id,sub_indicator_27a,sub_indicator_27b,sub_indicator_27c,sub_indicator_27d,indicator_27_comments,score,visit_date,created_by,updated_by,created_at,updated_at) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$hf,$si,$fi,$si27a,$si27b,$si27c,$si27d,$i27cm,$sc,$vd,$cb,$ub,$ca,$ua]);
 
-          DB::table('spars_info_system_27')->where('upload_status','=',0)->update(['upload_status' => 1]);
+          DB::table('spars_info_system_27')->where('upload_status','=',1)->update(['upload_status' => 2]);
         }
 
 return view('thanks');
