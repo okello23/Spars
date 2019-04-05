@@ -52,7 +52,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+        'mysql_remote' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
@@ -66,7 +66,7 @@ return [
             'engine' => null,
         ],
 
-        'mysql_remote' => [
+        'mysql' => [
             'driver' => 'mysql',
             'host' => '172.104.150.133',
             'port' =>  '3306',

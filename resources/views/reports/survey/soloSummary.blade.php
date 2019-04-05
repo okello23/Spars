@@ -5,15 +5,11 @@
 @section('content')
 <div class="page_content">
                 <div class="container-fluid">
-
-
-                   <div class="row">
+                  <div class="row">
                     <div class="col-lg-12">
                       <h3 class="pull-left">VISITS SUMMARY</h3>
                       </div>
                    </div>
-
-
 
                     <div class="row" id="report-section">
                       <div class="col-md-12">

@@ -353,7 +353,6 @@ class ApiController extends Controller
       $summary = new SurveySummary;
       $summary->health_facility_id = $request->facility_id;
       $summary->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
-
       $summary->next_visit_date = DateTime::createFromFormat('d F Y', $request->next_visit_date);
       $summary->form_id = $form_id;
       $summary->visit_number = $request->visit_number;
@@ -364,10 +363,8 @@ class ApiController extends Controller
 
       $summary_response = $summary->save();
 
-
       // supervised persons
       foreach ($request->supervisedList as $person) {
-
 
         $supervised_person = new SupervisedPerson;
 
@@ -375,17 +372,13 @@ class ApiController extends Controller
         $supervised_person->gender = $person['gender'];
         $supervised_person->cadre_id = $person['cadre'];
         $supervised_person->phone_number = $person['telephone'];
-
         $supervised_person->health_facility_id = $request->facility_id;
         $supervised_person->visit_date = DateTime::createFromFormat('d F Y', $request->visit_date);
         $supervised_person->form_id = $form_id;
         $supervised_person->created_by = Auth::user()->id;
-        $supervised_person->upload_status =0;
-
+        $supervised_person->upload_status = 1;
         $supervised_person->save();
-
       }
-
 
       //save supervisors
       foreach ($request->supervisorList as $person) {
@@ -400,7 +393,6 @@ class ApiController extends Controller
         $supervisor->upload_status = 1;
 
         $supervisor->save();
-
       }
 
       //update visit_number for facility
@@ -2057,7 +2049,7 @@ class ApiController extends Controller
       $equipment20->sub_indicator_20f6 = $request->lab_equipment_20f6=='NA'?-1:$request->lab_equipment_20f6;
 
       $equipment20->indicator_20_comments  = $request->lab_equipment_20_comments;
-      $equipment20->upload_status  = 0;
+      $equipment20->upload_status = 1;
 
       $equipment20_response  = $equipment20->save();
 
@@ -2377,7 +2369,7 @@ class ApiController extends Controller
       $information_system22->sub_indicator_22n = $request->lab_info_system_22n=='NA'?-1:$request->lab_info_system_22n;
 
       $information_system22->indicator_22_comments  = $request->lab_info_system_22_comments;
-      $information_system22->upload_status  = 0;
+      $information_system22->upload_status  = 1;
 
       $info_system22_response = $information_system22->save();
 
@@ -2623,7 +2615,7 @@ class ApiController extends Controller
       $information_system25->sub_indicator_25cf4 = $request->lab_info_system_25cf4=='NA'?-1:$request->lab_info_system_25cf4;
 
       $information_system25->indicator_25_comments  = $request->lab_info_system_25_comments;
-      $information_system25->upload_status  = 0;
+      $information_system25->upload_status = 1;
 
       $info_system25_response = $information_system25->save();
 
@@ -2766,7 +2758,7 @@ class ApiController extends Controller
       $information_system26->sub_indicator_26b = $request->lab_info_system_26b=='NA'?-1:$request->lab_info_system_26b;
 
       $information_system26->indicator_26_comments  = $request->lab_info_system_26_comments;
-      $information_system26->upload_status  = 0;
+      $information_system26->upload_status = 1;
 
       $info_system26_response = $information_system26->save();
 
@@ -2810,7 +2802,7 @@ class ApiController extends Controller
       $information_system27->sub_indicator_27d = $request->lab_info_system_27d=='NA'?-1:$request->lab_info_system_27d;
 
       $information_system27->indicator_27_comments  = $request->lab_info_system_27_comments;
-      $information_system27->upload_status  = 0;
+      $information_system27->upload_status = 1;
 
       $info_system27_response = $information_system27->save();
 
@@ -2992,7 +2984,6 @@ class ApiController extends Controller
       $ub = $value->updated_by;
       $st = $value->step;
       $fv = $value->form_version;
-      // $us = $value->upload_status;
 
       DB::connection('mysql_remote')->insert('insert into survey_summary (visit_date, next_visit_date,health_facility_id, created_at, updated_at,form_id, visit_number, created_by, updated_by,step,form_version) values (?, ?,?, ?,?, ?,?, ?,?, ?,?)', [$vd,$nvd,$hf,$ca,$ua,$fi,$vn,$cb,$ub,$st,$fv]);
 
@@ -4130,3 +4121,9 @@ return view('thanks');
 
   }
 }
+
+// $infosys27 = InformationSystem27::leftjoin('spars_info_system_27 as i27', 'i27.health_facility_id', '=', 'health_facilities.id')
+// ->leftjoin('spars_info_system_27 as i27', 'i27.survey_summary_id', '=', 'survey_summary.id')
+//     ->select('spars_info_system_27.*','i27.health_facility_id', 'i27.survey_summary_id', 'i27.form_id', 'i27.sub_indicator_27a', 'i27.sub_indicator_27b', 'i27.sub_indicator_27c', 'i27.sub_indicator_27d', 'i27.indicator_27_comments', 'i27.score', 'i27.visit_date', 'i27.created_by','i27.updated_by', 'i27.created_at', 'i27.updated_at')
+//     ->from('spars_info_system_27')
+//     ->get();
