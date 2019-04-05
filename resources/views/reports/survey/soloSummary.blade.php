@@ -53,21 +53,11 @@
                             <a href="{{ route('survey.partial', $item[0]['id'] ) }}"> {{ $row }} </a>
                           @endif
                           </th>
-                          @if($item[0]['step']==6 && $item[0]['upload_status'] == 0)
-                          <th>
-                            <!-- <span class='badge badge-success'>Complete </span> -->
-                            <span class='badge badge-danger'>Exists in Central Lab Spars</span>
-                          </th>
 
-                            @elseif($item[0]['step']==6  && $item[0]['upload_status']==1)
+                            @elseif($item[0]['step']==6)
                           <th>
                               <span class='badge badge-success'>Complete </span>
-                             <a type="button" href="{{ url('remoteupload') }}" class="btn btn-sm btn-primary"><span>Upload</span></a>
                           </th>
-
-                          @elseif($item[0]['step']==6 && $item[0]['upload_status']==2)
-                          <th scope="row" class="col-md-1"><span class='badge badge-info'><b>UPLOADED</b></span></th>
-
 
                           @elseif($item[0]['step']!=6)
                             <th scope="row" class="col-md-1"> <span class='badge badge-warning'> Partial [ {{$item[0]['step']+1}}/6 ] </span> </th>
