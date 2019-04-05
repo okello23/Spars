@@ -52,27 +52,13 @@ return [
             'prefix' => '',
         ],
 
-        'mysql_remote' => [
+        'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => '172.104.150.133',
-            'port' =>  '3306',
-            'database' =>  'sparstest',
-            'username' => 'remote',
-            'password' => '68965',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
