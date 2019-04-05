@@ -54,7 +54,7 @@
                           @endif
                           </th>
 
-                            @elseif($item[0]['step']==6)
+                            @if($item[0]['step']==6)
                           <th>
                               <span class='badge badge-success'>Complete </span>
                           </th>
