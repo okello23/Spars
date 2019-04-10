@@ -9,24 +9,24 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />    
 
-
-    <title>Lab SPARS</title>
+    <title>Laboratory SPARS</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">      
-    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css') }}">  
-    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">   
-    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css') }}">   
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css?v=2') }}">      
+    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css?v=2') }}">  
+    <link rel="stylesheet" href="{{ URL::asset('css/custom.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css?v=2') }}">   
+    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css?v=2') }}">       
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>    
 </head>
+
 <body id="app-layout" class="side_nav_hover">
         
         

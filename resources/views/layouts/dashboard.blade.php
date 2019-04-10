@@ -13,17 +13,17 @@
     <title>Lab SPARS</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">      
-    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css') }}">  
-    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">   
-    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css') }}">   
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css?v=2') }}">      
+    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css?v=2') }}">  
+    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/custom.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css?v=2') }}">   
+    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css?v=2') }}">   
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>    
 </head>
@@ -83,18 +83,11 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="{{ route('user.password', Auth::user()->id) }}">
-                        <span class="ion-key"></span> 
-                        <span class="nav_title">Change password</span>
-                    </a>
-                </li>
-
 
                 <li class="nav_trigger">
                     <a href="#">
                         <span class="ion-stats-bars"></span>
-                        <span class="nav_title">Reports</span>
+                        <span class="nav_title">Extracts</span>
                     </a>
                     <div class="sub_panel" style="left: -220px;">
                         <div class="side_inner">
@@ -107,8 +100,45 @@
                             <ul>
                                 <li><a href="{{ url('/reports/extract/indicator') }}"><span class="side_icon ion-ios7-star-outline"></span> Extract by Indicator </a></li>
                             </ul>
+                            <ul>
+                                <li><a href="{{ url('/reports/extract/audit') }}"><span class="side_icon ion-ios7-star-outline"></span> Audit trail </a></li>
+                            </ul>
                         </div>
                     </div>
+                </li>
+
+
+                <li class="nav_trigger">
+                    <a href="#">
+                        <span class="ion-stats-bars"></span>
+                        <span class="nav_title">Reports</span>
+                    </a>
+                    <div class="sub_panel" style="left: -220px;">
+                        <div class="side_inner">
+                            <ul>
+                                <li><a href="{{ url('/reports/charts/item_availability') }}"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{ url('/reports/charts/refill_rate') }}"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{ url('/reports/charts/ordering') }}"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{ url('/reports/charts/equipment_functionality') }}"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{ url('/reports/charts/accuracy_reporting') }}"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>        
+
+                <li>
+                    <a href="{{ route('user.password', Auth::user()->id) }}">
+                        <span class="ion-key"></span> 
+                        <span class="nav_title">Change password</span>
+                    </a>
                 </li>
 
 

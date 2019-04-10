@@ -13,17 +13,17 @@
     <title>Laboratory SPARS</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css') }}" > 
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">      
-    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css') }}">  
-    <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">   
-    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css') }}">       
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/toastr.min.css?v=2') }}" > 
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css?v=2') }}">      
+    <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/select2.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datetimepicker.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.min.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-datepicker3.min.css?v=2') }}">  
+    <link rel="stylesheet" href="{{ URL::asset('css/custom.css?v=2') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css?v=2') }}">   
+    <link rel="stylesheet" href="{{ URL::asset('css/formValidation.min.css?v=2') }}">       
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>    
 </head>
@@ -33,7 +33,7 @@
             <header class="navbar navbar-fixed-top" role="banner">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <h4 class="logo">SPARS</h4>
+                        <h4 class="logo">LAB SPARS</h4>
                     </div>
                 <ul class="nav navbar-nav navbar-right">
                             <li class="">
@@ -116,19 +116,19 @@
                     <div class="sub_panel" style="left: -220px;">
                         <div class="side_inner">
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
+                                <li><a href="{{ url('/reports/charts/item_availability') }}"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
+                                <li><a href="{{ url('/reports/charts/refill_rate') }}"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
+                                <li><a href="{{ url('/reports/charts/ordering') }}"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
+                                <li><a href="{{ url('/reports/charts/equipment_functionality') }}"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
+                                <li><a href="{{ url('/reports/charts/accuracy_reporting') }}"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
                             </ul>
                         </div>
                     </div>
@@ -208,23 +208,23 @@
                     <div class="sub_panel" style="left: -220px;">
                         <div class="side_inner">
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
+                                <li><a href="{{ url('/reports/charts/item_availability') }}"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
+                                <li><a href="{{ url('/reports/charts/refill_rate') }}"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
+                                <li><a href="{{ url('/reports/charts/ordering') }}"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
+                                <li><a href="{{ url('/reports/charts/equipment_functionality') }}"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
+                                <li><a href="{{ url('/reports/charts/accuracy_reporting') }}"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
                             </ul>
                         </div>
                     </div>
-                </li>       
+                </li>        
 
                 <li>
                     <a href="{{ route('user.password', Auth::user()->id) }}">
@@ -333,19 +333,19 @@
                     <div class="sub_panel" style="left: -220px;">
                         <div class="side_inner">
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
+                                <li><a href="{{ url('/reports/charts/item_availability') }}"><span class="side_icon ion-ios7-star-outline"></span> Item Availability </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
+                                <li><a href="{{ url('/reports/charts/refill_rate') }}"><span class="side_icon ion-ios7-star-outline"></span> Order refill rate </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
+                                <li><a href="{{ url('/reports/charts/ordering') }}"><span class="side_icon ion-ios7-star-outline"></span> Adherence to Ordering </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
+                                <li><a href="{{ url('/reports/charts/equipment_functionality') }}"><span class="side_icon ion-ios7-star-outline"></span> Equipment functionality </a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
+                                <li><a href="{{ url('/reports/charts/accuracy_reporting') }}"><span class="side_icon ion-ios7-star-outline"></span> Accuracy of Reporting </a></li>
                             </ul>
                         </div>
                     </div>
@@ -431,6 +431,7 @@
     <script src="{{ URL::asset('js/formValidation.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.steps.min.js') }}"></script>
     <script src="{{ URL::asset('js/custom.js') }}"></script>
+    <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
 
 <script>
   @if(Session::has('message'))

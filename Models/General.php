@@ -5,14 +5,22 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
-class VuSummaryScore extends Model implements AuditableContract
+class General extends Model implements AuditableContract
 {
     use Auditable;
+ 
 
-	protected $table = "vu_summary_scores";
+	protected $table = "spars_general";
 
-
+	
 	/**
 	* Relationship with districts
 	*/
+
+	public function Facility()
+	{
+		return $this->belongsTo('App\Models\HealthFacility');
+	}
+
+		
 }
