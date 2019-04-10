@@ -51,7 +51,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
         $summary_list =[];
         $visit1 =[];
         $visit3 =[];
@@ -59,30 +59,30 @@ class HomeController extends Controller
 
 
         $visit_ones = DB::table('spars_summary_scores')
-            ->select('spars_summary_scores.*')      
+            ->select('spars_summary_scores.*')
             ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
             ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
-            ->where('survey_summary.visit_number','=', 1)                     
-            ->where('survey_summary.step','=', 6)               
-            ->where('health_facilities.is_control_facility','=', 0)               
+            ->where('survey_summary.visit_number','=', 1)
+            ->where('survey_summary.step','=', 6)
+            ->where('health_facilities.is_control_facility','=', 0)
             ->get();
 
         $visit_threes = DB::table('spars_summary_scores')
-            ->select('spars_summary_scores.*')      
+            ->select('spars_summary_scores.*')
             ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
-            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')            
-            ->where('survey_summary.visit_number','=', 3)                     
-            ->where('survey_summary.step','=', 6)            
-            ->where('health_facilities.is_control_facility','=', 0)                  
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number','=', 3)
+            ->where('survey_summary.step','=', 6)
+            ->where('health_facilities.is_control_facility','=', 0)
             ->get();
 
         $visit_fives = DB::table('spars_summary_scores')
-            ->select('spars_summary_scores.*')      
+            ->select('spars_summary_scores.*')
             ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
-            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')            
-            ->where('survey_summary.visit_number','=', 5)                     
-            ->where('survey_summary.step','=', 6)                
-            ->where('health_facilities.is_control_facility','=', 0)               
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number','=', 5)
+            ->where('survey_summary.step','=', 6)
+            ->where('health_facilities.is_control_facility','=', 0)
             ->get();
 
         foreach ($visit_ones as $row ) {
@@ -102,9 +102,9 @@ class HomeController extends Controller
                     $row->indicator7_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator7_score);
                     $row->indicator8_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
                     $row->indicator9_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
-    
+
                     $stock_baseline_total = ($stock_baseline/(9-$stock_na_baseline))*5;
-                
+
                 //storage management score
                     $storage_na_baseline = 0;
                     $storage_baseline = 0;
@@ -118,7 +118,7 @@ class HomeController extends Controller
                     $row->indicator14_score == -1?($storage_na_baseline=$storage_na_baseline+1) : ($storage_baseline=$storage_baseline+$row->indicator14_score);
 
                     $storage_baseline_total = ($storage_baseline/ (5-$storage_na_baseline))*5;
-                
+
                 //ordering score
                     $ordering_na_baseline = 0;
                     $ordering_baseline = 0;
@@ -130,7 +130,7 @@ class HomeController extends Controller
                     $row->indicator17_score == -1?($ordering_na_baseline=$ordering_na_baseline+1) : ($ordering_baseline=$ordering_baseline+$row->indicator17_score);
 
                     $ordering_baseline_total = ($ordering_baseline/ (3-$ordering_na_baseline))*5;
-                
+
 
                 //equipment score
                     $equipment_na_baseline = 0;
@@ -143,7 +143,7 @@ class HomeController extends Controller
                     $row->indicator20_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator20_score);
                     $row->indicator21_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator21_score);
 
-                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;                
+                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;
 
                 //info management score
                     $info_na_baseline = 0;
@@ -159,13 +159,13 @@ class HomeController extends Controller
                     $row->indicator27_score == -1?($info_na_baseline = $info_na_baseline+1) : ($info_baseline=$info_baseline+$row->indicator27_score);
 
                     $info_baseline_total = ($info_baseline/ (6-$info_na_baseline))*5;
-                
+
 
                 $visit1 = [$stock_baseline_total, $storage_baseline_total, $ordering_baseline_total, $equipment_baseline_total, $info_baseline_total
 
                     ];
 
-        
+
         }
 
 
@@ -186,9 +186,9 @@ class HomeController extends Controller
                     $row->indicator7_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator7_score);
                     $row->indicator8_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
                     $row->indicator9_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
-    
+
                     $stock_baseline_total = ($stock_baseline/(9-$stock_na_baseline))*5;
-                
+
                 //storage management score
                     $storage_na_baseline = 0;
                     $storage_baseline = 0;
@@ -202,7 +202,7 @@ class HomeController extends Controller
                     $row->indicator14_score == -1?($storage_na_baseline=$storage_na_baseline+1) : ($storage_baseline=$storage_baseline+$row->indicator14_score);
 
                     $storage_baseline_total = ($storage_baseline/ (5-$storage_na_baseline))*5;
-                
+
                 //ordering score
                     $ordering_na_baseline = 0;
                     $ordering_baseline = 0;
@@ -214,7 +214,7 @@ class HomeController extends Controller
                     $row->indicator17_score == -1?($ordering_na_baseline=$ordering_na_baseline+1) : ($ordering_baseline=$ordering_baseline+$row->indicator17_score);
 
                     $ordering_baseline_total = ($ordering_baseline/ (3-$ordering_na_baseline))*5;
-                
+
 
                 //equipment score
                     $equipment_na_baseline = 0;
@@ -227,7 +227,7 @@ class HomeController extends Controller
                     $row->indicator20_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator20_score);
                     $row->indicator21_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator21_score);
 
-                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;                
+                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;
 
                 //info management score
                     $info_na_baseline = 0;
@@ -242,7 +242,7 @@ class HomeController extends Controller
                     $row->indicator26_score == -1?($info_na_baseline = $info_na_baseline+1) : ($info_baseline=$info_baseline+$row->indicator26_score);
                     $row->indicator27_score == -1?($info_na_baseline = $info_na_baseline+1) : ($info_baseline=$info_baseline+$row->indicator27_score);
 
-                    $info_baseline_total = ($info_baseline/ (6-$info_na_baseline))*5;              
+                    $info_baseline_total = ($info_baseline/ (6-$info_na_baseline))*5;
 
                 $visit3 = [$stock_baseline_total, $storage_baseline_total, $ordering_baseline_total, $equipment_baseline_total, $info_baseline_total
 
@@ -268,9 +268,9 @@ class HomeController extends Controller
                     $row->indicator7_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator7_score);
                     $row->indicator8_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
                     $row->indicator9_score == -1?($stock_na_baseline = $stock_na_baseline+1) : ($stock_baseline=$stock_baseline+$row->indicator8_score);
-    
+
                     $stock_baseline_total = ($stock_baseline/(9-$stock_na_baseline))*5;
-                
+
                 //storage management score
                     $storage_na_baseline = 0;
                     $storage_baseline = 0;
@@ -284,7 +284,7 @@ class HomeController extends Controller
                     $row->indicator14_score == -1?($storage_na_baseline=$storage_na_baseline+1) : ($storage_baseline=$storage_baseline+$row->indicator14_score);
 
                     $storage_baseline_total = ($storage_baseline/ (5-$storage_na_baseline))*5;
-                
+
                 //ordering score
                     $ordering_na_baseline = 0;
                     $ordering_baseline = 0;
@@ -296,7 +296,7 @@ class HomeController extends Controller
                     $row->indicator17_score == -1?($ordering_na_baseline=$ordering_na_baseline+1) : ($ordering_baseline=$ordering_baseline+$row->indicator17_score);
 
                     $ordering_baseline_total = ($ordering_baseline/ (3-$ordering_na_baseline))*5;
-                
+
 
                 //equipment score
                     $equipment_na_baseline = 0;
@@ -309,7 +309,7 @@ class HomeController extends Controller
                     $row->indicator20_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator20_score);
                     $row->indicator21_score == -1?($equipment_na_baseline = $equipment_na_baseline+1) : ($equipment_baseline=$equipment_baseline+$row->indicator21_score);
 
-                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;                
+                    $equipment_baseline_total = ($equipment_baseline/ (4-$equipment_na_baseline))*5;
 
                 //info management score
                     $info_na_baseline = 0;
@@ -324,13 +324,13 @@ class HomeController extends Controller
                     $row->indicator26_score == -1?($info_na_baseline = $info_na_baseline+1) : ($info_baseline=$info_baseline+$row->indicator26_score);
                     $row->indicator27_score == -1?($info_na_baseline = $info_na_baseline+1) : ($info_baseline=$info_baseline+$row->indicator27_score);
 
-                    $info_baseline_total = ($info_baseline/ (6-$info_na_baseline))*5;                
+                    $info_baseline_total = ($info_baseline/ (6-$info_na_baseline))*5;
 
                 $visit5 = [$stock_baseline_total, $storage_baseline_total, $ordering_baseline_total, $equipment_baseline_total, $info_baseline_total
 
                     ];
 
-        
+
         }
 
 
@@ -375,10 +375,10 @@ class HomeController extends Controller
 
                         "scale" => [
 
-                                        "ticks" => [        
+                                        "ticks" => [
                                                         "max" => 5,
                                                         "min" => 0,
-                                                        "stepSize" => 1                                    
+                                                        "stepSize" => 1
                                                     ]
                                     ]
 
@@ -396,10 +396,10 @@ class HomeController extends Controller
 
         $baselines = DB::table('spars_summary_scores')
             ->select('spars_summary_scores.*', 'health_facilities.facility', 'health_facilities.level', DB::raw('MIN(spars_summary_scores.visit_date) as min_visit_date'))
-            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')        
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
             ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
-            ->where('survey_summary.step','=', 6)          
-            ->where('health_facilities.is_control_facility','=', 0)                                      
+            ->where('survey_summary.step','=', 6)
+            ->where('health_facilities.is_control_facility','=', 0)
             ->groupBy('spars_summary_scores.health_facility_id')
             ->get();
 
@@ -408,7 +408,7 @@ class HomeController extends Controller
 
                 $current = DB::table('spars_summary_scores')
                     ->select('spars_summary_scores.*', 'health_facilities.facility', 'health_facilities.level')
-                    ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id') 
+                    ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
                     ->where('spars_summary_scores.health_facility_id','=',$row->health_facility_id)
                     ->orderBy('spars_summary_scores.visit_date','desc')
                     ->first();
@@ -442,7 +442,7 @@ class HomeController extends Controller
 
                     $stock_baseline_total = ($stock_baseline/ (9-$stock_na_baseline))*5;
                     $stock_current_total = ($stock_current/ (9-$stock_na_current))*5;
-                
+
 
                 //storage management score
                     $storage_na_baseline = 0;
@@ -482,7 +482,7 @@ class HomeController extends Controller
 
                     $ordering_baseline_total = ($ordering_baseline/(3-$ordering_na_baseline))*5;
                     $ordering_current_total = ($ordering_current/(3-$ordering_na_current))*5;
-                
+
 
                 //equipment score
                     $equipment_na_baseline = 0;
@@ -503,7 +503,7 @@ class HomeController extends Controller
 
                     $equipment_baseline_total = ($equipment_baseline/(4-$equipment_na_baseline))*5;
                     $equipment_current_total = ($equipment_current/(4-$equipment_na_current))*5;
-                
+
 
                 //info management score
                     $info_na_baseline = 0;
@@ -527,21 +527,21 @@ class HomeController extends Controller
 
                     $info_baseline_total = ($info_baseline/(6-$info_na_baseline))*5;
                     $info_current_total = ($info_current/(6-$info_na_current))*5;
-                
 
-                $item = [$row->facility. ' '.$row->level, 
-                    
-                            ($stock_baseline_total+$storage_baseline_total+$ordering_baseline_total+$equipment_baseline_total+$info_baseline_total), 
+
+                $item = [$row->facility. ' '.$row->level,
+
+                            ($stock_baseline_total+$storage_baseline_total+$ordering_baseline_total+$equipment_baseline_total+$info_baseline_total),
                             ($stock_current_total+$storage_current_total+$ordering_current_total+$equipment_current_total+$info_current_total)
 
                     ];
 
                 array_push($summary_list,$item);
 
-        
+
         }
 
-        
+
         return view('home.facility_performance')->with('summary_list',$summary_list);
     }
 
@@ -555,10 +555,10 @@ class HomeController extends Controller
 
         $baselines = DB::table('spars_summary_scores')
             ->select('spars_summary_scores.*', 'health_facilities.facility', 'health_facilities.level', 'health_facilities.district', DB::raw('MIN(spars_summary_scores.visit_date) as min_visit_date'))
-            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')        
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
             ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
-            ->where('survey_summary.step','=', 6)                               
-            ->where('health_facilities.is_control_facility','=', 0)               
+            ->where('survey_summary.step','=', 6)
+            ->where('health_facilities.is_control_facility','=', 0)
             ->groupBy('spars_summary_scores.health_facility_id')
             ->get();
 
@@ -567,7 +567,7 @@ class HomeController extends Controller
 
                 $current = DB::table('spars_summary_scores')
                     ->select('spars_summary_scores.*', 'health_facilities.facility', 'health_facilities.level')
-                    ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id') 
+                    ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
                     ->where('spars_summary_scores.health_facility_id','=',$row->health_facility_id)
                     ->orderBy('spars_summary_scores.visit_date','desc')
                     ->first();
@@ -601,7 +601,7 @@ class HomeController extends Controller
 
                     $stock_baseline_total = ($stock_baseline/ (9-$stock_na_baseline))*5;
                     $stock_current_total = ($stock_current/ (9-$stock_na_current))*5;
-                
+
 
                 //storage management score
                     $storage_na_baseline = 0;
@@ -641,7 +641,7 @@ class HomeController extends Controller
 
                     $ordering_baseline_total = ($ordering_baseline/(3-$ordering_na_baseline))*5;
                     $ordering_current_total = ($ordering_current/(3-$ordering_na_current))*5;
-                
+
 
                 //equipment score
                     $equipment_na_baseline = 0;
@@ -662,7 +662,7 @@ class HomeController extends Controller
 
                     $equipment_baseline_total = ($equipment_baseline/(4-$equipment_na_baseline))*5;
                     $equipment_current_total = ($equipment_current/(4-$equipment_na_current))*5;
-                
+
 
                 //info management score
                     $info_na_baseline = 0;
@@ -690,11 +690,11 @@ class HomeController extends Controller
 
 
                 $item = collect([
-                        
-                            'district'=>$row->district, 
-                            'baseline'=>($stock_baseline_total+$storage_baseline_total+$ordering_baseline_total+$equipment_baseline_total+$info_baseline_total), 
+
+                            'district'=>$row->district,
+                            'baseline'=>($stock_baseline_total+$storage_baseline_total+$ordering_baseline_total+$equipment_baseline_total+$info_baseline_total),
                             'current'=>($stock_current_total+$storage_current_total+$ordering_current_total+$equipment_current_total+$info_current_total)
-                        
+
                         ]);
 
                 $facility_summary_scores->push($item);
@@ -702,15 +702,15 @@ class HomeController extends Controller
 
         }
 
-        
+
         $list = $facility_summary_scores->groupBy('district');
 
         foreach ($list as $key => $item) {
 
-            $collection = collect([ 
-                                        'district'=>$key, 
-                                        'baseline'=>$item->avg('baseline'), 
-                                        'current'=>$item->avg('current'), 
+            $collection = collect([
+                                        'district'=>$key,
+                                        'baseline'=>$item->avg('baseline'),
+                                        'current'=>$item->avg('current'),
 
                                     ]);
 
@@ -779,9 +779,504 @@ class HomeController extends Controller
             }
 
         }
-        
+
 
         return view('home.league_table')->with('list',$list->sortBy('district'));
     }
 
+    public function itemAvailabilityChart()
+    {
+
+        //visit 1
+        $visit_ones = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator1_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 1)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 2
+
+        $visit_twos = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator1_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 2)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 3
+        $visit_threes = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator1_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 3)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 4
+        $visit_fours = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator1_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 4)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 5
+        $visit_fives = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator1_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 5)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+
+        $chartjs = app()->chartjs
+        ->name('lineChart')
+        ->type('line')
+        ->size(['width' => 400, 'height' => 200])
+        ->labels(['Visit 1', 'Visit 2', 'Visit 3', 'Visit 4', 'Visit 5'])
+        ->datasets([
+            [
+                "label" => "Item Availability",
+                'backgroundColor' => "rgba(255, 255, 255, 0)",
+                'borderColor' => "rgba(38, 185, 154, 0.7)",
+                "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                "pointHoverBackgroundColor" => "#fff",
+                "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                'data' => [round($visit_ones->avg('indicator1_score'),2), round($visit_twos->avg('indicator1_score'),2),round($visit_threes->avg('indicator1_score'),2),round($visit_fours->avg('indicator1_score'),2),round($visit_fives->avg('indicator1_score'),2)],
+            ]
+        ])
+        ->options([]);
+
+        $chartjs->optionsRaw("{
+            legend: {
+                display:false
+                    },
+            scales:{
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 1,
+                        stepSize: 0.2,
+                        beginAtZero: true
+                    }
+                }]
+            }
+            }");
+
+        return view('reports.charts.item_availability', compact('chartjs'));
+
+    }
+    public function orderRefillRateChart()
+{
+
+
+    //visit 1
+    $visit_ones = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator9_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 1)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 2
+
+    $visit_twos = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator9_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 2)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 3
+    $visit_threes = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator9_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 3)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 4
+    $visit_fours = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator9_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 4)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 5
+    $visit_fives = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator9_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 5)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+
+    $chartjs = app()->chartjs
+    ->name('lineChart')
+    ->type('line')
+    ->size(['width' => 400, 'height' => 200])
+    ->labels(['Visit 1', 'Visit 2', 'Visit 3', 'Visit 4', 'Visit 5'])
+    ->datasets([
+        [
+            "label" => "Order refill rate",
+            'backgroundColor' => "rgba(255, 255, 255, 0)",
+            'borderColor' => "rgba(38, 185, 154, 0.7)",
+            "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+            "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+            "pointHoverBackgroundColor" => "#fff",
+            "pointHoverBorderColor" => "rgba(220,220,220,1)",
+            'data' => [round($visit_ones->avg('indicator9_score'),2), round($visit_twos->avg('indicator9_score'),2),round($visit_threes->avg('indicator9_score'),2),round($visit_fours->avg('indicator9_score'),2),round($visit_fives->avg('indicator9_score'),2)],
+        ]
+    ])
+    ->options([]);
+
+    $chartjs->optionsRaw("{
+        legend: {
+            display:false
+                },
+        scales:{
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 1,
+                    stepSize: 0.2,
+                    beginAtZero: true
+                }
+            }]
+        }
+        }");
+
+    return view('reports.charts.refill_rate', compact('chartjs'));
+}
+
+public function orderingChart()
+{
+
+
+    //visit 1
+    $visit_ones = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator16_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 1)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 2
+
+    $visit_twos = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator16_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 2)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 3
+    $visit_threes = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator16_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 3)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 4
+    $visit_fours = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator16_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 4)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 5
+    $visit_fives = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator16_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 5)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+
+    $chartjs = app()->chartjs
+    ->name('lineChart')
+    ->type('line')
+    ->size(['width' => 400, 'height' => 200])
+    ->labels(['Visit 1', 'Visit 2', 'Visit 3', 'Visit 4', 'Visit 5'])
+    ->datasets([
+        [
+            "label" => "Adherence to Ordering",
+            'backgroundColor' => "rgba(255, 255, 255, 0)",
+            'borderColor' => "rgba(38, 185, 154, 0.7)",
+            "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+            "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+            "pointHoverBackgroundColor" => "#fff",
+            "pointHoverBorderColor" => "rgba(220,220,220,1)",
+            'data' => [round($visit_ones->avg('indicator16_score'),2), round($visit_twos->avg('indicator16_score'),2),round($visit_threes->avg('indicator16_score'),2),round($visit_fours->avg('indicator16_score'),2),round($visit_fives->avg('indicator16_score'),2)],
+        ]
+    ])
+    ->options([]);
+
+    $chartjs->optionsRaw("{
+        legend: {
+            display:false
+                },
+        scales:{
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 1,
+                    stepSize: 0.2,
+                    beginAtZero: true
+                }
+            }]
+        }
+        }");
+
+
+    return view('reports.charts.ordering', compact('chartjs'));
+}
+
+public function equipmentFunctionalityChart()
+{
+
+    //visit 1
+    $visit_ones = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator20_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 1)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 2
+
+    $visit_twos = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator20_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 2)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 3
+    $visit_threes = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator20_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 3)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 4
+    $visit_fours = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator20_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 4)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+    //visit 5
+    $visit_fives = Collection::make (DB::table('spars_summary_scores')
+        ->select('spars_summary_scores.indicator20_score')
+        ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+        ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+        ->where('survey_summary.visit_number', 5)
+        ->where('survey_summary.step', 6)
+        ->where('health_facilities.is_control_facility', 0)
+        ->where('spars_summary_scores.indicator1_score','!=', -1)
+        ->get() );
+
+
+    $chartjs = app()->chartjs
+    ->name('lineChartTest')
+    ->type('line')
+    ->size(['width' => 400, 'height' => 200])
+    ->labels(['Visit 1', 'Visit 2', 'Visit 3', 'Visit 4', 'Visit 5'])
+    ->datasets([
+        [
+            "label" => "Equipment functionality",
+            'backgroundColor' => "rgba(255, 255, 255, 0)",
+            'borderColor' => "rgba(38, 185, 154, 0.7)",
+            "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+            "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+            "pointHoverBackgroundColor" => "#fff",
+            "pointHoverBorderColor" => "rgba(220,220,220,1)",
+            'data' => [round($visit_ones->avg('indicator1_score'),2), round($visit_twos->avg('indicator1_score'),2),round($visit_threes->avg('indicator1_score'),2),round($visit_fours->avg('indicator20_score'),2),round($visit_fives->avg('indicator1_score'),2)],
+        ]
+    ])
+    ->options([]);
+
+    $chartjs->optionsRaw("{
+        legend: {
+            display:false
+                },
+        scales:{
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 1,
+                    stepSize: 0.2,
+                    beginAtZero: true
+                }
+            }]
+        }
+        }");
+
+    return view('reports.charts.equipment_functionality', compact('chartjs'));
+}
+
+
+    public function accuracyReportingChart()
+    {
+
+
+        //visit 1
+        $visit_ones = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator25_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 1)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 2
+
+        $visit_twos = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator25_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 2)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 3
+        $visit_threes = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator25_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 3)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 4
+        $visit_fours = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator25_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 4)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+        //visit 5
+        $visit_fives = Collection::make (DB::table('spars_summary_scores')
+            ->select('spars_summary_scores.indicator25_score')
+            ->join('survey_summary', 'spars_summary_scores.survey_summary_id', '=', 'survey_summary.id')
+            ->join('health_facilities', 'spars_summary_scores.health_facility_id', '=', 'health_facilities.id')
+            ->where('survey_summary.visit_number', 5)
+            ->where('survey_summary.step', 6)
+            ->where('health_facilities.is_control_facility', 0)
+            ->where('spars_summary_scores.indicator1_score','!=', -1)
+            ->get() );
+
+
+        $chartjs = app()->chartjs
+        ->name('lineChart')
+        ->type('line')
+        ->size(['width' => 400, 'height' => 200])
+        ->labels(['Visit 1', 'Visit 2', 'Visit 3', 'Visit 4', 'Visit 5'])
+        ->datasets([
+            [
+                "label" => "Accuracy of Reporting",
+                'backgroundColor' => "rgba(255, 255, 255, 0)",
+                'borderColor' => "rgba(38, 185, 154, 0.7)",
+                "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                "pointHoverBackgroundColor" => "#fff",
+                "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                'data' => [round($visit_ones->avg('indicator25_score'),2), round($visit_twos->avg('indicator25_score'),2),round($visit_threes->avg('indicator25_score'),2),round($visit_fours->avg('indicator25_score'),2),round($visit_fives->avg('indicator25_score'),2)],
+            ]
+        ])
+        ->options([]);
+
+        $chartjs->optionsRaw("{
+            legend: {
+                display:false
+                    },
+            scales:{
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 1,
+                        stepSize: 0.2,
+                        beginAtZero: true
+                    }
+                }]
+            }
+            }");
+
+
+        return view('reports.charts.accuracy_reporting', compact('chartjs'));
+    }
 }
