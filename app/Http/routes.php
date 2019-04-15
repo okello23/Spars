@@ -152,7 +152,6 @@ Route::get('/performance', [
     'as' => 'home.performance'
 ]);
 
-
 Route::get('/league', [
     'uses' => 'HomeController@leagueTable',
     'as' => 'home.league'
@@ -171,22 +170,7 @@ Route::post('/saveTransfer', [
     'as' => 'survey.saveTransfer', 'uses' => 'SurveyController@saveTransfer'
 ]);
 
-Route::get('/reports/charts/item_availability', [
-    'as' => 'reports.charts.item_availability', 'uses' => 'HomeController@itemAvailabilityChart'
-]);
-
-Route::get('/reports/charts/refill_rate', [
-    'as' => 'reports.charts.refill_rate', 'uses' => 'HomeController@orderRefillRateChart'
-]);
-
-Route::get('/reports/charts/ordering', [
-    'as' => 'reports.charts.ordering', 'uses' => 'HomeController@orderingChart'
-]);
-
-Route::get('/reports/charts/equipment_functionality', [
-    'as' => 'reports.charts.equipment_functionality', 'uses' => 'HomeController@equipmentFunctionalityChart'
-]);
-
-Route::get('/reports/charts/accuracy_reporting', [
-    'as' => 'reports.charts.accuracy_reporting', 'uses' => 'HomeController@accuracyReportingChart'
+Route::get('/remoteupload', [
+  'uses'=>'ApiController@remoteUpload',
+  'as'=>'remoteupload'
 ]);
